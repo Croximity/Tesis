@@ -1,0 +1,73 @@
+\chapter[Conclusiones y recomendaciones]{Conclusiones y recomendaciones}
+\label{chap:conclusiones}
+
+\insertminitoc
+\parindent0pt
+
+\section{Conclusiones generales}
+
+El modelado y desarrollo de una arquitectura de seguridad basada en Inteligencia Artificial de Borde (\textit{Edge AI}) ha demostrado ser una táctica analítica muy eficaz para la protección infantil en entornos digitales. Se ha conseguido detectar con exactitud interacciones de riesgo, describir los patrones de amenazas predominantes y evaluar contextos conversacionales complejos a través del uso del Procesamiento de Lenguaje Natural (\gls{nlp}) y la Visión Artificial. Los hallazgos ofrecen un fundamento sólido y medible que posibilita sugerir un cambio de paradigma: pasar del bloqueo estático de aplicaciones a una moderación inteligente y proactiva, la cual ayudará a mejorar notablemente la ciberseguridad de los menores sin vulnerar su privacidad.
+
+Se logró \textbf{representar e implementar} con éxito un motor de inferencia híbrido directamente en el dispositivo móvil (Android). Este modelo posibilitó determinar que las amenazas digitales no se limitan a palabras aisladas, sino que se enfocan en construcciones semánticas complejas (como el \textit{grooming} o la extorsión). Los contextos donde la interacción vulnera la seguridad del menor se identificaron con exactitud mediante redes neuronales convolucionales 1D.
+
+La \textbf{evaluación y el procesamiento} de imágenes en segundo plano confirmaron la existencia de patrones visuales de riesgo (\gls{nsfw} o violencia), típicamente asociados al consumo de redes sociales o navegadores web. La identificación de estos patrones y la determinación de falsos positivos en la interfaz de usuario son esenciales para la implementación de medidas de control parental dinámicas y precisas.
+
+La \textbf{implementación de algoritmos de optimización}, como la cuantización de modelos en TensorFlow Lite, permitió ejecutar tareas de \textit{Machine Learning} pesado con capacidades límite de hardware. Estos modelos no solo señalaron los riesgos existentes en tiempo real, sino que también permitieron mantener la carga de la memoria \gls{ram} estable (promediando 280 MB) y un uso de \gls{cpu} transitorio, revelando que los teléfonos inteligentes modernos poseen el poder de cómputo necesario para ser explotados como nodos de seguridad autónomos.
+
+Los escenarios de riesgo digital fueron identificados con gran precisión por las herramientas de accesibilidad (\textit{AccessibilityService}) que se fundamentan en la lectura de pantalla en tiempo real. Esta habilidad de intercepción fue esencial para realizar una evaluación no destructiva del comportamiento del menor, cuantificando la amenaza potencial antes de emitir una alerta.
+
+Se ha propuesto y validado un sistema integral de alertas forenses, basándose en la recolección de evidencia inmutable (capturas de pantalla y fragmentos de texto exactos) a partir de los incidentes evaluados durante el monitoreo. Estas notificaciones, respaldadas por la arquitectura \textit{Cloud} de Firebase, constituyen un insumo estratégico y legalmente factible para que los padres manejen las amenazas y disminuyan de manera sostenida la exposición al riesgo cibernético.
+
+\section{Aportes tecnológicos y prácticos de la investigación}
+El desarrollo de \textit{Parental AI Shield}, el cual modeliza la prevención del cibercrimen infantil mediante redes neuronales, produce aportes importantes que trascienden la mera creación de una aplicación, estableciendo un entorno metodológico y tecnológico para administrar la seguridad digital de manera inteligente.
+
+\begin{itemize}
+    \item \textbf{Creación de un modelo de moderación descentralizado (Edge AI):} La digitalización del análisis de contenido localmente es la primera contribución y la más importante. El control parental pasa de ser un monitor invasivo basado en la nube a transformarse en un guardián autónomo en el dispositivo, garantizando la privacidad constitucional.
+    \item \textbf{Desarrollo e implementación de un set de algoritmos de clasificación de alto impacto:} la investigación se basa en la aplicación sistemática de modelos de \textit{Transfer Learning} (MobileNetV2) y \textit{Word Embeddings} que otorgan una inteligencia analítica al contexto, algo que no se logra con listas negras o métodos de bloqueo tradicionales.
+    \item \textbf{Plataforma de auditoría y recolección forense:} Se implementó una herramienta de bitácora sincronizada (basada en SQLite y Firestore) que representa un salto tecnológico clave. Esta plataforma permite un registro encriptado e inalterable de los incidentes, vital para procesos legales o psicológicos posteriores.
+    \item \textbf{Marco metodológico replicable para la seguridad móvil:} En última instancia, la investigación no simplemente proporciona una app funcional; también define un marco metodológico integral. Este marco tiene la posibilidad de ser trasladado a otros sectores que enfrenten retos de moderación de contenido (como el control corporativo o la prevención del fraude). El modelo combina la intercepción de eventos de \gls{ui}, el análisis matemático tensorial y la persistencia en la nube, brindando una habilidad preventiva fundamentada en datos.
+\end{itemize}
+
+\section{Limitaciones encontradas durante la implementación}
+La realización del proyecto de seguridad algorítmica, a pesar de que alcanzó sus metas, tuvo que superar diversos retos propios de la utilización de métodos tecnológicos avanzados en el restringido entorno del sistema operativo Android. Para lograr resultados fiables, era esencial superar estas dificultades. \\
+
+\textbf{Disponibilidad y Calidad de los Datos de Entrenamiento} \\
+\begin{itemize}
+    \item \textbf{Ausencia de datasets en español coloquial:} No había un repositorio de datos central y público que incluyera incidentes de \textit{grooming} o ciberacoso etiquetados utilizando modismos latinoamericanos o lenguaje propio de plataformas como Roblox.
+    \item \textbf{Dependencia en la generación sintética:} Se necesitó un fuerte apoyo en la creación y aumento de datos (\textit{Data Augmentation}) manual y primaria para entrenar los modelos de \gls{nlp} de forma efectiva.
+\end{itemize}
+
+\textbf{Restricciones del Entorno Móvil (Android \gls{os})} \\
+\begin{itemize}
+    \item \textbf{Ajuste fino del consumo de batería y memoria:} el proceso de ajustar los hiperparámetros del modelo para que la evaluación constante en segundo plano no drenara la batería del celular ni cerrara la aplicación abruptamente (por el \textit{Out of Memory Killer} de Android) fue un procedimiento técnico y cíclico complicado.
+    \item \textbf{Limitaciones de la \gls{api} de Accesibilidad:} las herramientas nativas de lectura de pantalla requirieron filtros heurísticos significativos para evitar procesar ruido de la interfaz (como los botones de "Regresar" o menús de navegación), lo que ralentizaba la inferencia visual y de texto.
+\end{itemize}
+
+\textbf{Retos en la Percepción de Privacidad} \\
+\begin{itemize}
+    \item \textbf{Curva de confianza del usuario:} para los padres acostumbrados al software tradicional, el uso de Inteligencia Artificial que "lee la pantalla" suena invasivo inicialmente. Necesita una comunicación especializada para que se pueda entender que el procesamiento es estrictamente local y anónimo.
+\end{itemize}
+
+\section{Recomendaciones}
+A partir de los resultados que se han logrado con el entrenamiento de los modelos, el diagnóstico del rendimiento en hardware y las encuestas de aceptación, se exponen las siguientes sugerencias estratégicas para el futuro del proyecto y la industria del control parental:
+\begin{itemize}
+    \item \textbf{Optimización de la Arquitectura de Hardware Dedicado:} Al evaluar la carga sobre la \gls{cpu} durante la inferencia de imágenes complejas, se da prioridad a la recomendación de migrar futuras versiones del modelo para utilizar la \gls{npu} (\textit{Neural Processing Unit}) presente en los procesadores móviles modernos, suprimiendo los picos de consumo de \gls{cpu}.
+    \item \textbf{Sincronización bidireccional y control remoto:} Mejorar la herramienta a través de la puesta en marcha de un panel web para padres conectado vía WebSockets, lo que posibilite ajustar los umbrales de sensibilidad de la \gls{ia} o solicitar bloqueos de pantalla instantáneos según la severidad de la alerta en tiempo real.
+    \item \textbf{Ampliación del soporte idiomático y jergas (\gls{nlp} Multilingüe):} Cambiar hacia un modelo de lenguaje universal mediante la implementación de transformadores ligeros (como MobileBERT), para detectar riesgos sin importar si el menor se comunica en inglés, español neutro o utilizando acrónimos de internet (ej. \textit{slang} de videojuegos).
+    \item \textbf{Gestión de alianzas institucionales y legales:} Se deben establecer políticas de cooperación con instituciones gubernamentales (como la Policía Cibernética) fundamentadas en los patrones delictivos detectados, para que las evidencias recopiladas por \textit{Parental AI Shield} posean validez inmediata en investigaciones de \textit{grooming} o pornografía infantil.
+\end{itemize}
+
+\section{Trabajos Futuros}
+La presente investigación ha establecido un modelo base utilizando redes neuronales locales para el análisis del comportamiento digital. Sin embargo, para escalar esta solución hacia un ecosistema de seguridad autónomo e hiper-personalizado, se proponen las siguientes líneas de desarrollo tecnológico: \\
+
+\textbf{Incorporación de análisis de audio en tiempo real (Voice AI):} Reemplazar la limitación de monitorear exclusivamente texto e imágenes mediante el uso de modelos \textit{Speech-to-Text} y análisis de sentimiento vocal. Esto posibilitará la detección de acoso o manipulación psicológica durante llamadas de voz o partidas de videojuegos en línea (chat de voz) de modo automático, lo cual cerrará uno de los vectores de amenaza más grandes en la actualidad. \\
+
+\textbf{Creación de un sistema de prevención dinámica (Bloqueo Activo):} Desarrollar una interfaz que no solo notifique, sino que intervenga directamente en el dispositivo:
+\begin{itemize}
+    \item Dibujado sobre aplicaciones (\textit{Overlay}): para superponer una pantalla negra o difuminar la imagen (\textit{Blur}) exactamente en el instante en que el modelo de visión clasifica un contenido como \gls{gore} o \gls{nsfw}, antes de que el menor lo procese visualmente.
+    \item Cierre forzado de procesos: para suspender la aplicación de mensajería automáticamente si el nivel de toxicidad semántica supera el $95\%$.
+\end{itemize}
+
+\textbf{Implementación de Aprendizaje Federado (Federated Learning):} Crear un esquema de entrenamiento colaborativo donde los modelos de \gls{ia} en cada celular puedan aprender de nuevos vectores de ataque sin comprometer la privacidad. Utilizando el cálculo de pesos descentralizados, el sistema facilitará a la red neuronal global actualizarse contra nuevos modismos ofensivos o imágenes de riesgo de manera proactiva, sin que las fotos o chats privados de los niños viajen a la nube. \\
+
+\textbf{Evaluación y perfilado psicológico predictivo:} Usar la infraestructura de análisis semántico no solo con el fin de alertar sobre depredadores, sino también como instrumento para auditar la salud mental del menor. El sistema llevará a cabo una evaluación continua del uso del lenguaje, identificando marcadores tempranos de depresión, autolesiones o aislamiento social, brindando reportes de salud digital preventiva a los tutores.

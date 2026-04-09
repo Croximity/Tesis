@@ -1,0 +1,25 @@
+\thispagestyle{plain}
+\chapter*{Resumen}
+
+Esta tesis se centra en el desarrollo y evaluación de \textit{Parental AI Shield}, un sistema unificado de control parental para dispositivos móviles diseñado para detectar amenazas digitales como el ciberacoso, la exposición a contenido explícito (\gls{nsfw}) y el \textit{grooming}. Inicialmente, se analizó la ineficacia de las herramientas tradicionales, las cuales se limitan al bloqueo restrictivo de aplicaciones y, frecuentemente, vulneran la intimidad del menor al transmitir datos rutinarios a servidores externos en la nube.
+
+Posteriormente, se diseñó e implementó una arquitectura de seguridad híbrida fundamentada en la inteligencia artificial de borde (\textit{Edge AI}). Se entrenaron e integraron modelos de Procesamiento de Lenguaje Natural (redes convolucionales 1D) y Visión Artificial (\textit{Fine-Tuning} de MobileNetV2), optimizados mediante TensorFlow Lite para su ejecución estrictamente local. Una vez calibrados los umbrales de riesgo, el sistema de inferencia se acopló a un servicio de accesibilidad nativo en Android, permitiendo una monitorización semántica y visual en segundo plano bajo diversos escenarios de interacción digital.
+
+Los resultados demostraron una alta eficacia técnica, alcanzando una precisión de entrenamiento del $96.88\%$ en la clasificación de imágenes y una incidencia casi nula de falsos positivos en la evaluación contextual de textos. Adicionalmente, el análisis con perfiladores de hardware evidenció un consumo de recursos estable que garantiza una operación no intrusiva en el dispositivo. Finalmente, las pruebas de campo con tutores legales validaron la gran utilidad de las alertas forenses, confirmando la factibilidad de emplear algoritmos de \textit{Machine Learning} local para brindar ciberseguridad proactiva sin comprometer la privacidad constitucional del menor.
+
+\keywordses{Inteligencia Artificial, Control Parental, Edge AI, Procesamiento de Lenguaje Natural, Visión Artificial}
+
+\MediaOptionLogicBlank
+
+\pdfbookmark[1]{Abstract}{abstract}
+\chapter*{Abstract}
+
+This thesis focuses on the development and evaluation of \textit{Parental AI Shield}, a unified parental control system for mobile devices designed to detect digital threats such as cyberbullying, exposure to explicit content (\gls{nsfw}), and grooming. Initially, the ineffectiveness of traditional tools was analyzed, as they are often limited to restrictive app blocking and frequently compromise the minor's privacy by transmitting routine data to external cloud servers.
+
+Subsequently, a hybrid security architecture based on Edge Artificial Intelligence (\textit{Edge AI}) was designed and implemented. Natural Language Processing models (1D convolutional networks) and Computer Vision models (MobileNetV2 Fine-Tuning), optimized via TensorFlow Lite for strictly local execution, were trained and integrated. Once the risk thresholds were calibrated, the inference engine was coupled with a native Android accessibility service, allowing for background semantic and visual monitoring under various scenarios of digital interaction.
+
+The results demonstrated high technical efficacy, achieving a $96.88\%$ training accuracy in image classification and a near-zero incidence of false positives in the contextual evaluation of texts. Additionally, hardware profiling analysis showed a stable resource consumption that guarantees a non-intrusive operation on the device. Finally, field tests with legal guardians validated the high utility of forensic alerts, confirming the feasibility of using local Machine Learning algorithms to provide proactive cybersecurity without compromising the minor's constitutional privacy.
+
+\keywordsen{Artificial Intelligence, Parental Control, Edge AI, Natural Language Processing, Computer Vision}
+
+\MediaOptionLogicBlank

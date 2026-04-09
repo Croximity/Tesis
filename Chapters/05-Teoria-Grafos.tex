@@ -1,0 +1,407 @@
+\chapter[Teoria de Grafos]{Teoría de Grafos}
+\label{cp:teoria-grafos}
+
+\insertminitoc
+\parindent0pt
+
+\section{Conceptos principales de teoría de grafos}
+La teoría de \textbf{grafos} se ha consolidado como una herramienta formal esencial para representar y analizar sistemas compuestos por elementos interconectados. Su mayor fortaleza es 
+la capacidad de abstraer fenómenos reales como redes viales, sistemas de transporte, redes sociales o estructuras computacionales en modelos matemáticos simples pero muy 
+poderosos, permitiendo estudiar su comportamiento, detectar patrones y proponer optimizaciones basadas en su estructura. Este enfoque ha sido ampliamente validado en la 
+literatura científica, donde los grafos se utilizan para estudiar desde redes biológicas hasta infraestructura urbana.
+
+\subsection{Definición de grafo}
+Un grafo se define formalmente como un par ordenado $G=(V,E)$ donde $V$ es el conjunto de vértices o nodos, y $E$ es el conjunto de aristas que representan las conexiones entre 
+ellos \cite{bollobas_modern_2013, diestel_basics_2025}. Esta representación permite capturar la estructura subyacente de una red real, como por ejemplo una red de transporte 
+urbano. Esta capacidad de representar intersecciones como nodos y vías como aristas lo convierte en un modelo idóneo para analizar el tráfico vehicular. En la literatura 
+reciente aplicada a \acrshort{its}, el grafo es la estructura de datos subyacente que permite representar desde la topología física de la ciudad 
+hasta las dinámicas complejas de interacción vehicular \cite{borg_graph_2024, zhang_network_2024}.
+
+\begin{figure}[!htpb]
+    \centering
+    \includegraphics[width=0.5\linewidth]{Figures/Grafo.pdf}
+    \caption[Representación gráfica de un grafo simple]{Representación gráfica de un grafo simple. Fuente: Basado en el libro “Teoría de Grafos Moderna” \cite{bollobas_modern_2013}.}
+    \label{fig:figure-grafo-simple}
+\end{figure}
+
+\subsection{Nodos}
+En el contexto del modelado vial, los nodos $v \in V$ representan puntos discretos de decisión o transferencia en el espacio. Dependiendo de la granularidad del modelo 
+(macro o microscópico), un nodo puede simbolizar:
+
+\begin{itemize}
+    \item \textbf{Intersecciones físicas:} Cruces semaforizados, señales de alto o rotondas donde los flujos vehiculares convergen y divergen.
+    \item \textbf{Centroides de demanda:} En modelos de planificación, los nodos actúan como fuentes (origen) y sumideros (destino) de viajes, representando zonas residenciales 
+    o comerciales.
+    \item \textbf{Puntos de transferencia:} Estaciones de transporte público o terminales logísticas.
+\end{itemize}
+
+Como destacan \cite{musmade_study_2024} , la correcta definición de los atributos del nodo (como capacidad de procesamiento o penalización por giro) es crítica para detectar cuellos de 
+botella estructurales.
+
+\subsection{Grafos dirigidos y no dirigidos}
+La direccionalidad es una propiedad esencial para la validez del modelo de tráfico:
+
+\begin{itemize}
+    \item \textbf{Grafos no dirigidos:} Asumen que la conexión entre nodos es simétrica (el costo de ir de A a B es igual que de B a A). Son poco frecuentes en modelos 
+    urbanos realistas, ya que ignoran el sentido de las vías.
+    \item \textbf{Grafos dirigidos (Dígrafos):} Son el estándar en la modelización de transporte. Aquí, cada arco tiene un sentido específico. Esto permite representar:
+    \begin{itemize}
+        \item Calles de sentido único.
+        \item Restricciones de giro en intersecciones.
+        \item Fenómenos asimétricos (ej. una pendiente que reduce la velocidad en un sentido, pero no en el otro).
+    \end{itemize}
+\end{itemize}
+
+Según \cite{reddy_efficient_nodate}, el uso de grafos dirigidos es indispensable para la implementación de algoritmos de control de tráfico, ya que previene la asignación de rutas imposibles 
+físicamente.
+
+\subsection{Grafos ponderados (Pesos y Costos)}
+Un grafo puramente topológico indica conectividad, pero para analizar eficiencia se requiere un \textbf{grafo ponderado}. En este modelo, a cada arco se le asigna un valor numérico 
+o "peso" ($w$), que representa el costo generalizado de atravesarlo.
+En tu tesis, los pesos pueden definirse bajo diferentes métricas, transformando la naturaleza del análisis:
+
+\begin{itemize}
+    \item \textbf{Peso basado en Distancia ($d$):} Útil para rutas estáticas y planificación de infraestructura física.
+    \item \textbf{Peso basado en Tiempo ($t$):} Es dinámico y depende de la congestión.
+    \item \textbf{Peso basado en Congestión/Capacidad:} Utiliza funciones de impedancia (como la función BPR) donde el peso aumenta exponencialmente a medida que el volumen de 
+    tráfico se acerca a la capacidad de la vía.
+\end{itemize}
+
+Estudios recientes utilizan grafos ponderados dinámicamente para predecir demoras, donde los pesos se actualizan en tiempo real 
+mediante \acrfull{gnn} \cite{borg_graph_2024}.
+
+\section{Propiedades relevantes en redes de tráfico}
+La comprensión de las propiedades estructurales de una red vial es fundamental para analizar el comportamiento del tráfico urbano mediante teoría de grafos. Uno de los 
+principales beneficios de este enfoque radica en que permite abstraer la compleja interacción entre calles e intersecciones en un modelo matemático manejable, lo que a su vez 
+facilita identificar puntos críticos, evaluar rutas y comprender los patrones de movilidad con un nivel de precisión difícil de lograr mediante observación intuitiva. La Teoría 
+de Grafos permite relacionar una estructura abstracta y simple de nodos interconectados, la ventaja de este enfoque radica en la simplicidad para calcular un conjunto de 
+índices que evalúan la conectividad, accesibilidad y centralidad dentro de las redes \cite{arias_alisis_2016}.
+
+\subsection{Grados de los nodos (entradas/salidas)}
+El \textbf{grado nodal}, que se define como la cantidad de aristas que inciden en un vértice, es la métrica más fundamental pero también informativa. En el marco de grafos dirigidos, 
+esta característica se separa en dos: grado de entrada y grado de salida. De acuerdo con investigaciones actuales sobre la vulnerabilidad de las redes, los nodos que tienen un 
+gran grado de entrada funcionan como desagües de flujo, constituyendo lugares donde se concentran flujos vehiculares y donde la posibilidad de congestión es alta. Según 
+\cite{porta_network_2004}, el análisis del grado permite descubrir jerarquías naturales en el diseño urbano, lo que hace visibles patrones que no siempre son obvios en los 
+mapas convencionales.
+
+Identificar nodos de alto y bajo grado no solo brinda una perspectiva estructural, sino que también hace más fácil la priorización de intervenciones. Las intersecciones con un 
+alto grado suelen ser candidatas para la ampliación de carriles, la implementación de rotondas o mejoras en los semáforos. En cambio, si se integran de manera apropiada, los 
+nodos de bajo grado pueden actuar como rutas de alivio. Esto pone de manifiesto que el grado no es solo una propiedad matemática, sino también un instrumento eficaz para 
+diagnosticar cómo se comporta el tráfico.
+
+\subsection{Caminos y rutas}
+La idea de la conectividad entre dos puntos se establece a través del concepto de \textbf{camino}, que es una sucesión limitada de aristas que conecta un nodo inicial con uno final sin 
+repetir vértices. Es fundamental diferenciar entre la viabilidad operativa y la existencia topológica de un camino en ingeniería de transporte. Un camino topológico simplemente 
+señala que se puede ir de A a B, mientras que una ruta operativa en un grafo ponderado intenta optimizar una función de costo, normalmente la distancia generalizada o el 
+tiempo de viaje. La redundancia de vías (la presencia de varias \textbf{rutas} independientes entre pares origen-destino) es un indicador directo de la capacidad de recuperación de la 
+red; si una ruta principal se ve afectada por un incidente, contar con caminos alternativos permite que el sistema pueda asimilar la interrupción sin llegar a un 
+colapso \cite{guze_graph_2019}. De acuerdo con \cite{barthelemy_spatial_2011}, el análisis de las vías revela la estructura de accesibilidad en una ciudad, permitiendo evaluar la eficacia y el efecto del 
+diseño vial sobre la movilidad diaria. Esto permite que se puedan analizar rutas críticas, evaluar la fortaleza del sistema frente a bloqueos y sugerir redistribuciones de 
+tráfico que disminuyan la presión sobre las principales vías.
+
+\subsection{Grafos Conexos}
+Según \cite{coto_algoritmos_2003}, un grafo se considera conexo si es posible alcanzar cualquier nodo desde otro cualquiera a través de un camino. De lo contrario, no es conexo, pero puede 
+descomponerse en componentes conexas, que son subconjuntos de los nodos y las aristas del grafo original que sí presentan conexión. En el contexto del tráfico urbano, 
+esta propiedad es fundamental porque determina la cohesión de la red: una red vial altamente conexa ofrece múltiples rutas alternativas, lo que disminuye la probabilidad de 
+congestión severa cuando ocurre un bloqueo o incidente. La conectividad es un indicador clave de la resiliencia de la red urbana. Esta propiedad también permite identificar 
+componentes aislados o subredes mal integradas que pueden obstaculizar la fluidez vehicular y requerir mejoras en infraestructura.
+
+\subsection{Subgrafos relevantes}
+La estructura de la red se puede estudiar a través de subgrafos o agrupaciones densas, además de los nodos individuales. Las comunidades son subconjuntos de nodos que muestran 
+una densidad interna de conexiones notablemente más alta que la de sus conexiones con el resto de la red. En investigaciones de tráfico, trabajar con subgrafos es 
+particularmente beneficioso porque simplifica el análisis de corredores viales, áreas comerciales, zonas escolares o sectores con un gran volumen de vehículos sin sacrificar 
+la claridad analítica.La estructura de la red se puede estudiar a través de subgrafos o agrupaciones densas, además de los nodos individuales. Las comunidades son subconjuntos 
+de nodos que muestran una densidad interna de conexiones notablemente más alta que la de sus conexiones con el resto de la red. En investigaciones de tráfico, trabajar con 
+subgrafos es particularmente beneficioso porque simplifica el análisis de corredores viales, áreas comerciales, zonas escolares o sectores con un gran volumen de vehículos 
+sin sacrificar la claridad analítica.
+
+Según \cite{cardillo_structural_2006}, el estudio de subgrafos posibilita analizar patrones locales en la estructura más extensa de la red urbana, lo que ofrece información 
+minuciosa acerca de la densidad vial, el nivel de redundancia y la eficacia interna de áreas concretas. Esto permite identificar áreas vulnerables, sugerir rutas de desahogo 
+o planear modificaciones en los semáforos y la señalización dentro de zonas específicas.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{Figures/Subgrafo.pdf}
+    \caption[Ejemplo de subgrafo en un grafo simple]{Ejemplo de subgrafo en un grafo simple. Fuente: adaptada de \cite{rottoli_proceso_2018}.}
+    \label{fig:figure-subgrafo}
+\end{figure}
+
+\section{Algoritmos aplicados al análisis vial}
+No solo las características estructurales, sino también la implementación de algoritmos que posibilitan la evaluación de cuellos de botella, flujos, rutas y vulnerabilidades 
+en la red, son determinantes para el análisis de redes de tráfico a través de teoría de grafos. Utilizar un grafo para representar una red de tráfico posibilita la aplicación 
+de algoritmos tradicionales de optimización con el fin de solucionar problemas complejos relacionados con la movilidad.  Estos procedimientos informáticos no únicamente 
+explican el estado de la red, sino que también proponen soluciones prescriptivas para la navegación, la gestión de capacidad y la detección de infraestructuras esenciales. 
+Como afirma \cite{barthelemy_spatial_2011} Los algoritmos utilizados en redes espaciales representan una conexión directa entre el modelo matemático y la conducta real del sistema urbano.
+
+\subsection{Algoritmos de camino (Dijkstra y A*)}
+Los algoritmos de caminos mínimos posibilitan el cálculo del camino más eficaz entre dos puntos de la red, ya sea considerando la distancia, el tiempo o el costo. El 
+algoritmo de Dijkstra, por ejemplo, se emplea mucho en sistemas de análisis y navegación del tráfico porque tiene la habilidad de identificar rutas óptimas en grafos 
+ponderados. Para calcular la ruta menos costosa en grafos con pesos no negativos, Dijkstra sigue siendo el estándar básico. Su operación se fundamenta en una exploración 
+sistemática y extensa desde el nodo inicial, asegurando de manera matemática el descubrimiento del óptimo global. De acuerdo con \cite{bast_route_2015}, los algoritmos de caminos mínimos 
+son los fundamentos de los sistemas contemporáneos para la planificación de rutas y tienen una utilidad especial en las redes urbanas. No obstante, en redes urbanas de gran 
+tamaño que necesitan respuestas en tiempo real, el análisis detallado de Dijkstra podría ser costoso desde el punto de vista computacional \cite{tiara_optimizing_nodate}.
+
+\begin{listing}[H]
+    \caption{Pseudocódigo del Algoritmo Dijkstra}
+    \label{lst:dijkstra}
+    \begin{minted}{text}
+        Dijkstra(Grafo G, Nodo origen):
+        Para cada nodo v en G:
+            distancia[v] ← ∞
+            previo[v] ← indefinido
+        distancia[origen] ← 0
+        
+        Q ← conjunto de todos los nodos
+
+        Mientras Q no esté vacío:
+            u ← nodo en Q con distancia mínima
+            Q ← Q \ {u}
+
+            Para cada vecino v de u:
+                alt ← distancia[u] + peso(u, v)
+                Si alt < distancia[v]:
+                    distancia[v] ← alt
+                    previo[v] ← u
+
+        Retornar distancia, previo
+    \end{minted}
+\end{listing}
+
+Además, \textbf{A*} incluye una heurística que agiliza la búsqueda de rutas óptimas, lo cual es particularmente efectivo en redes extensas en las que se necesita disminuir los 
+tiempos de cálculo. Es perfecto para el análisis del tráfico urbano cuando se dispone de información extra, como la estimación del tiempo de viaje o las posiciones geográficas, 
+puesto que su heurística incrementa notablemente el rendimiento sin poner en riesgo la precisión.
+Investigaciones comparativas actuales evidencian que A* disminuye significativamente los tiempos de cálculo en situaciones dinámicas, mientras que Dijkstra garantiza la 
+exactitud en la planificación estática \cite{ayari_optimizing_2025}. 
+
+\begin{listing}[H]
+    \caption{Pseudocodigo del algoritmo A*}
+    \label{lst:a-star}
+    \begin{minted}{text}
+        A*(G, inicio, objetivo, heuristica h):
+        abierto ← {inicio}
+        g[inicio] ← 0
+        f[inicio] ← h(inicio)
+
+        Mientras abierto no esté vacío:
+            n ← nodo en abierto con f más bajo
+            Si n = objetivo:
+                retornar camino reconstruido
+
+            abrir ← abrir \ {n}
+            cerrar ← cerrar ∪ {n}
+
+            Para cada vecino v de n:
+                Si v en cerrar:
+                    continuar
+
+                tentativo_g ← g[n] + peso(n, v)
+
+                Si v no en abierto:
+                    abierto ← abierto ∪ {v}
+                Sino si tentativo_g ≥ g[v]:
+                    continuar
+
+                previo[v] ← n
+                g[v] ← tentativo_g
+                f[v] ← g[v] + h(v)
+    \end{minted}
+\end{listing}
+
+\subsection{Algoritmo de flujo máximo (Ford\-Fulkerson)}
+Los algoritmos de \textbf{flujo máximo}, por ejemplo, el de \textbf{Ford-Fulkerson}, posibilitan la determinación de la mayor capacidad de tránsito entre dos puntos dentro 
+de una red. Este algoritmo es particularmente útil en el análisis vial, ya que contribuye a detectar puntos críticos y a estimar la capacidad estructural de la red cuando 
+varias rutas se unen en una zona crítica. La aplicación de este algoritmo es vital para identificar el "corte mínimo" de la red, es decir, el conjunto de vías cuya saturación 
+restringe el flujo total del sistema, revelando así las limitaciones estructurales que no pueden resolverse simplemente optimizando los semáforos, sino que requieren expansión 
+física \cite{zhang_network_2024}.
+
+Este método también posibilita modelar situaciones prácticas como desvíos, cierres de carreteras o la capacidad máxima de una avenida. A mi juicio, el valor fundamental del 
+algoritmo reside en su habilidad para medir los límites operativos de la infraestructura, lo que resulta crucial para llevar a cabo la planificación urbana y manejar las 
+emergencias.
+
+\begin{listing}[H]
+    \caption{Pseudocodigo del algoritmo Ford-Fulkerson}
+    \label{lst:ford-fulkerson}
+    \begin{minted}{text}
+        FordFulkerson(G, s, t):
+        Para cada arista (u, v) en G:
+            flujo(u, v) ← 0
+
+        Mientras exista un camino aumentante P desde s a t:
+            capacidad_residual ← mínima capacidad residual en P
+            
+            Para cada arista (u, v) en P:
+                flujo(u, v) ← flujo(u, v) + capacidad_residual
+                flujo(v, u) ← flujo(v, u) - capacidad_residual
+
+        Retornar flujo máximo
+    \end{minted}
+\end{listing}
+
+\subsection{Análisis de centralidad}
+La importancia relativa de cada nodo en la red se puede evaluar a través del análisis de centralidad. Para el análisis de tráfico, este tipo de métricas es crucial, 
+porque los nodos con mayor centralidad tienden a ser los más solicitados por los usuarios y, por lo tanto, los que tienen más probabilidades de congestión. Creo que estas 
+métricas son una herramienta indispensable para reconocer puntos críticos y dar prioridad a las intervenciones urbanas.
+
+\subsubsection{Identificación de cuellos de botella (Betweenness centrality)}
+La centralidad de intermediación (\textbf{betweenness}) calcula la cantidad de las rutas más cortas que transitan a través de un nodo o una arista. Esta es una de las 
+métricas más importantes para el análisis vial porque detecta cuellos de botella estructurales incluso antes de que se puedan ver datos reales sobre el tráfico. Investigaciones 
+han revelado que los nodos con una alta betweenness tienden a coincidir con intersecciones cruciales en ciudades reales \cite{crucitti_centrality_2006}.
+
+\begin{listing}[H]
+    \caption{Pseudocodigo del algoritmo de identificación de cuellos de botella}
+    \label{lst:betweenness-centrality}
+    \begin{minted}{text}
+        Betweenness(G):
+        Para cada nodo v:
+            BC[v] ← 0
+
+        Para cada nodo s en G:
+            pila ← vacía
+            pred ← lista de predecesores
+            sigma[todos] ← 0
+            sigma[s] ← 1
+            dist[todos] ← -1
+            dist[s] ← 0
+            cola ← {s}
+
+            Mientras cola no esté vacía:
+                v ← extraer cola
+                insertar v en pila
+                Para cada vecino w:
+                    Si dist[w] < 0:
+                        dist[w] ← dist[v] + 1
+                        agregar w a cola
+                    Si dist[w] = dist[v] + 1:
+                        sigma[w] ← sigma[w] + sigma[v]
+                        agregar v a pred[w]
+
+            delta[todos] ← 0
+            Mientras pila no esté vacía:
+                w ← sacar pila
+                Para cada v en pred[w]:
+                    delta[v] ← delta[v] + (sigma[v] / sigma[w]) * (1 + delta[w])
+                Si w ≠ s:
+                    BC[w] ← BC[w] + delta[w]
+
+        Retornar BC
+    \end{minted}
+\end{listing}
+
+\subsubsection{Centralidad de cercanía (Closeness centrality)}
+La \textbf{centralidad de cercanía} (\textbf{closeness}) señala cuán accesible es un nodo comparado con los demás nodos de la red. En redes urbanas, un nodo que tiene una alta cercanía es el 
+que permite acceder a numerosos otros nodos de manera rápida. Para determinar las áreas con una mejor accesibilidad general y para medir la eficacia del diseño vial, esta 
+métrica es fundamental. Según \cite{barthelemy_spatial_2011}, Destaca que la proximidad demuestra la habilidad de una red para interconectar sus elementos de manera eficaz.
+
+\begin{listing}[H]
+    \caption{Pseudocodigo del algoritmo cemtralidad de cercanía}
+    \label{lst:closeness-centrality}
+    \begin{minted}{text}
+        Closeness(G):
+        Para cada nodo v:
+            distancias ← ejecutar Dijkstra desde v
+            CC[v] ← (n - 1) / suma(distancias)
+
+        Retornar CC
+    \end{minted}
+\end{listing}
+
+\subsubsection{Centralidad de grado (Degree centrality)}
+La centralidad de grado determina los "hubs" locales o las intersecciones que cuentan con más conexiones directas, es decir, cuantifica la cantidad de conexiones 
+directamente relacionadas con un nodo y muestra su relevancia topológica inmediata. Esta métrica sirve para entender las jerarquías locales dentro de la red urbana y 
+para identificar cruces con un volumen potencial de tráfico elevado. Como \cite{porta_network_2004} muestra en su investigación, esta métrica revela la estructura básica del entramado vial.
+
+\begin{listing}[H]
+    \caption{Pseudocodigo del algoritmo de centralidad de grado}
+    \label{lst:degree-centrality}
+    \begin{minted}{text}
+        Para cada nodo v:
+            DC[v] ← número de aristas conectadas a v
+
+        Retornar DC
+    \end{minted}
+\end{listing}
+
+\section{Detección de nodos críticos y vulnerabilidad de la red}
+La identificación de \textbf{nodos críticos} tiene como objetivo establecer qué intersecciones son fundamentales para preservar la fluidez y la integridad del sistema vial. Una red que 
+depende en gran medida de unos pocos nodos es más susceptible a las congestiones y los errores. Este análisis es fundamental para que los municipios establezcan prioridades en 
+sus intervenciones, pues un único nodo crítico puede impactar de manera severa el funcionamiento de toda la ciudad.
+
+De acuerdo con \cite{kurant_trainspotting_2006}, estos estudiaron la vulnerabilidad de las redes de transporte y determinaron que eliminar nodos críticos podría dividir 
+gravemente la red, disminuyendo su eficacia y conectividad. Esta clase de análisis facilita prever riesgos, idear rutas alternativas y fortalecer la capacidad de resistencia 
+urbana frente a emergencias, cierres o picos en la demanda.
+
+\begin{listing}[H]
+    \caption{Pseudocodigo del algoritmo de centralidad de grado}
+    \label{lst:critical-nodes}
+    \begin{minted}{text}
+        NodosCriticos(G):
+        críticos ← []
+
+        Para cada nodo v en G:
+            G_temp ← G sin v
+            componentes ← contar componentes conexas en G_temp
+
+            Si componentes > 1:
+                agregar v a críticos
+
+        Retornar críticos
+    \end{minted}
+\end{listing}
+
+\section{Simulación del tráfico vehicular con grafos}
+Simular el tráfico vehicular a través de grafos es una herramienta clave para analizar cómo se comportan las redes urbanas de manera dinámica, sin tener que recurrir en un 
+principio a modelos detallados o a la recolección de grandes cantidades de datos en campo. Esta aproximación presenta una ventaja fundamental: posibilita que la ciudad sea 
+entendida como una red matemática formada por aristas (vías) y nodos (intersecciones), lo que hace posible determinar patrones de tránsito, cuellos de botella y otras opciones 
+de ruta a partir de la estructura del sistema. Como señala \cite{barthelemy_spatial_2011}, Los modelos que se basan en grafos son útiles para comprender las características funcionales y 
+espaciales de las ciudades, lo que los convierte en un marco teórico extenso para investigar la movilidad urbana.
+
+En este marco, la simulación se basa en el otorgamiento de pesos dinámicos a las aristas; estos pesos simbolizan parámetros cruciales como la capacidad, la velocidad, el tiempo 
+de trayecto o los niveles de congestión. Esta representación brinda una manera adaptable de reproducir diversas situaciones urbanas, como la evaluación de rutas alternativas, 
+las interrupciones temporales debido a accidentes o trabajos y el incremento en horas pico.
+
+\subsubsection{SUMO como herramienta de simulación basada en grafos}
+A pesar de que \Acrfull{sumo} es visto como un simulador microscópico del tráfico, su estructura interna se basa en la representación de la red vial a través de grafos 
+dirigidos y ponderados, donde:
+
+\begin{itemize}
+    \item Los \textbf{nodos} simbolizan intersecciones, enlaces internos y puntos significativos de la red.
+    \item Las \textbf{aristas} son segmentos de vías que exhiben características como la pendiente, la velocidad máxima, el número de carriles, las limitaciones para dar 
+    vuelta y la capacidad.
+    \item Los \textbf{pesos} de un grafo están relacionados con los tiempos de viaje, las distancias o los costos cambiantes vinculados al tránsito vehicular.
+\end{itemize}
+
+Como señala \cite{krajzewicz_recent_2012}, \acrshort{sumo} utiliza un grafo dirigido para simular la red vial, al que añade información extra con el fin de replicar el comportamiento de los 
+vehículos de manera fidedigna.
+
+Esta representación permite que SUMO implemente algoritmos de caminos mínimos como Dijkstra o variantes heurísticas como A* para asignar rutas basadas en tiempo de viaje o 
+congestión estimada. En mi opinión, esta integración entre teoría de grafos y microsimulación constituye una de las fortalezas centrales de SUMO, ya que posibilita simular 
+escenarios complejos de movilidad utilizando una estructura matemática robusta como base conceptual.
+
+Además, \acrshort{sumo} combina el grafo vial con modelos de comportamiento vehicular, lo que permite simular fenómenos como colas, aceleraciones, frenado, distancia de 
+seguridad, propagación de ondas de choque y efectos acumulativos de congestión. De esta forma, el grafo funciona como el soporte estructural de la red, mientras que la 
+simulación dinámica permite aproximarse a condiciones reales del tráfico.
+
+\subsubsection{Integración de grafos y simulación en la toma de decisiones}
+El análisis de las intervenciones urbanas antes de su implementación física es posible gracias a la combinación de herramientas fundamentadas en grafos y motores de simulación 
+como SUMO, lo cual disminuye costos y riesgos. Estas metodologías posibilitan la evaluación de interrogantes tales como: ¿Qué sucede si se cierra una vía? ¿Cómo varía el flujo 
+al agregar un carril? ¿Qué camino puede llegar a ser un cuello de botella con un desvío? O bien, ¿cuál es la mejor reconfiguración semafórica para disminuir los tiempos de 
+espera? Según \cite{nagel_cellular_1992}, incluso los modelos simplificados pueden capturar las dinámicas globales del tráfico, lo cual respalda la utilidad de estas herramientas en las primeras 
+etapas del análisis urbano.
+
+En términos prácticos, considero que esta clase de simulación basada en grafos resulta especialmente pertinente para ciudades como Comayagua, donde la estructura vial es 
+relativamente concisa y los puntos de congestión suelen concentrarse en intersecciones clave. Evaluar escenarios simulados ofrece información inmediata y útil para diseñar 
+estrategias de circulación, gestionar desvíos y planificar el crecimiento urbano.
+
+\section{Retos y limitaciones de la teoría de grafos en la movilidad urbana}
+A pesar de su utilidad, la teoría de grafos presenta retos significativos cuando se aplica al análisis del tráfico urbano. En mi opinión, el mayor desafío radica en que el 
+tráfico real es un fenómeno dinámico, influenciado por factores humanos, ambientales y operativos que un modelo puramente estructural no siempre puede captar. Los grafos 
+representan eficazmente la topología vial, pero no modelan de forma nativa elementos como la agresividad de los conductores, la variabilidad de velocidades, cambios bruscos 
+por incidentes o la microinteracción entre vehículos. Según \cite{porta_network_2004}, los grafos posibilitan un análisis exhaustivo de la estructura, su capacidad predictiva se encuentra 
+fuertemente condicionada por la calidad y disponibilidad de datos sobre movilidad.
+
+Además, hay retos vinculados a la complejidad de los cálculos. A pesar de que los grafos posibilitan modelar redes extensas, algunos problemas —como la simulación de 
+congestión que depende del volumen, el análisis de vulnerabilidad o la identificación de rutas óptimas múltiples— pueden aumentar significativamente la carga computacional, 
+en particular en las redes urbanas más grandes. Esta limitación puede limitar el análisis en términos de resolución o nivel de detalle.
+Por último, otro reto importante es la representación parcial de la realidad urbana. Las redes viales comprenden no solamente nodos y aristas, sino también semáforos, 
+direcciones de circulación, clases de vías, áreas para estacionar, transporte público, ciclistas y pseatones. Si estos elementos no se incorporan, el análisis puede ser 
+incompleto.

@@ -1,0 +1,22 @@
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {11.1}Diseño de la Solución tecnológica}{\reset@font\mtcSfont 80}{section.11.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {11.1.1}Arquitectura general del sistema}{\reset@font\mtcSSfont 81}{subsection.11.1.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {11.2}Flujo de procesos}{\reset@font\mtcSfont 82}{section.11.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {11.2.1}Flujo de procesos del sistema}{\reset@font\mtcSSfont 82}{subsection.11.2.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {11.3}Implementación del Sistema de Monitoreo y Análisis}{\reset@font\mtcSfont 83}{section.11.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {11.3.1}Preparación y curación del dataset de entrenamiento}{\reset@font\mtcSSfont 83}{subsection.11.3.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {11.3.2}Desarrollo del modelo de análisis basado en Deep Learning}{\reset@font\mtcSSfont 83}{subsection.11.3.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {11.3.3}Gestión de evidencias y visualización de resultados}{\reset@font\mtcSSfont 85}{subsection.11.3.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {11.3.4}Integración con el entorno de ejecución y monitoreo}{\reset@font\mtcSSfont 85}{subsection.11.3.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {11.3.5}Entorno de desarrollo y herramientas utilizadas}{\reset@font\mtcSSfont 86}{subsection.11.3.5}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {11.3.6}Validación inicial del sistema}{\reset@font\mtcSSfont 87}{subsection.11.3.6}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {11.4}Pruebas y resultados preliminares}{\reset@font\mtcSfont 87}{section.11.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {11.4.1}Análisis del lenguaje de riesgo mediante Procesamiento de Lenguaje Natural (\gls {nlp})}{\reset@font\mtcSSfont 87}{subsection.11.4.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {11.4.2}Preprocesamiento y Vectorización Avanzada}{\reset@font\mtcSSfont 87}{subsection.11.4.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {11.4.3}Arquitectura del Modelo de Red Neuronal (\gls {cnn} + \gls {nlp})}{\reset@font\mtcSSfont 88}{subsection.11.4.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {11.4.4}Estrategia de Entrenamiento y Optimización}{\reset@font\mtcSSfont 89}{subsection.11.4.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {11.4.5}Procesamiento y Curación del Dataset Visual}{\reset@font\mtcSSfont 90}{subsection.11.4.5}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {11.4.6}Arquitectura de Visión Artificial mediante Transfer Learning}{\reset@font\mtcSSfont 90}{subsection.11.4.6}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {11.4.7}Detección Multimodelo: Contenido Explícito y Violencia/Gore}{\reset@font\mtcSSfont 90}{subsection.11.4.7}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {11.4.8}Optimización de Inferencia y Cuantización (Edge AI)}{\reset@font\mtcSSfont 90}{subsection.11.4.8}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {11.4.9}Pruebas de monitoreo en el entorno Android}{\reset@font\mtcSSfont 91}{subsection.11.4.9}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {11.4.10}Pruebas de estrés y rendimiento del sistema}{\reset@font\mtcSSfont 92}{subsection.11.4.10}}

@@ -1,0 +1,23 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+        \PYG{k+kn}{import}\PYG{+w}{ }\PYG{n+nn}{tensorflow}\PYG{+w}{ }\PYG{k}{as}\PYG{+w}{ }\PYG{n+nn}{tf}
+        \PYG{k+kn}{from}\PYG{+w}{ }\PYG{n+nn}{tensorflow.keras.models}\PYG{+w}{ }\PYG{k+kn}{import} \PYG{n}{Sequential}
+        \PYG{k+kn}{from}\PYG{+w}{ }\PYG{n+nn}{tensorflow.keras.layers}\PYG{+w}{ }\PYG{k+kn}{import} \PYG{n}{Embedding}\PYG{p}{,} \PYG{n}{Conv1D}\PYG{p}{,} \PYG{n}{GlobalMaxPooling1D}\PYG{p}{,} \PYG{n}{Dense}\PYG{p}{,} \PYG{n}{Dropout}
+
+        \PYG{c+c1}{\PYGZsh{} Definición de la arquitectura del modelo semántico}
+        \PYG{n}{modelo\PYGZus{}nlp} \PYG{o}{=} \PYG{n}{Sequential}\PYG{p}{([}
+            \PYG{n}{Embedding}\PYG{p}{(}\PYG{n}{input\PYGZus{}dim}\PYG{o}{=}\PYG{l+m+mi}{2000}\PYG{p}{,} \PYG{n}{output\PYGZus{}dim}\PYG{o}{=}\PYG{l+m+mi}{32}\PYG{p}{,} \PYG{n}{input\PYGZus{}length}\PYG{o}{=}\PYG{l+m+mi}{50}\PYG{p}{),}
+            \PYG{n}{Dropout}\PYG{p}{(}\PYG{l+m+mf}{0.4}\PYG{p}{),}
+            \PYG{n}{Conv1D}\PYG{p}{(}\PYG{n}{filters}\PYG{o}{=}\PYG{l+m+mi}{32}\PYG{p}{,} \PYG{n}{kernel\PYGZus{}size}\PYG{o}{=}\PYG{l+m+mi}{3}\PYG{p}{,} \PYG{n}{activation}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}relu\PYGZsq{}}\PYG{p}{),}
+            \PYG{n}{GlobalMaxPooling1D}\PYG{p}{(),}
+            \PYG{n}{Dense}\PYG{p}{(}\PYG{l+m+mi}{16}\PYG{p}{,} \PYG{n}{activation}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}relu\PYGZsq{}}\PYG{p}{),}
+            \PYG{n}{Dropout}\PYG{p}{(}\PYG{l+m+mf}{0.4}\PYG{p}{),}
+            \PYG{n}{Dense}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{activation}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}sigmoid\PYGZsq{}}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} Clasificación binaria (Seguro vs Riesgo)}
+        \PYG{p}{])}
+
+        \PYG{c+c1}{\PYGZsh{} Compilación del modelo}
+        \PYG{n}{modelo\PYGZus{}nlp}\PYG{o}{.}\PYG{n}{compile}\PYG{p}{(}\PYG{n}{optimizer}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}adam\PYGZsq{}}\PYG{p}{,}
+                           \PYG{n}{loss}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}binary\PYGZus{}crossentropy\PYGZsq{}}\PYG{p}{,}
+                           \PYG{n}{metrics}\PYG{o}{=}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}accuracy\PYGZsq{}}\PYG{p}{])}
+
+        \PYG{n}{modelo\PYGZus{}nlp}\PYG{o}{.}\PYG{n}{summary}\PYG{p}{()}
+\end{MintedVerbatim}

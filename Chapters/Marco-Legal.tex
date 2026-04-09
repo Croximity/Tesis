@@ -1,0 +1,41 @@
+\chapter[Marco Legal y Ético]{Marco Legal y Ético}
+\label{ch:marco-legal}
+
+\insertminitoc
+\parindent0pt
+
+\section{Normativa Legal y Estándares Técnicos Internacionales}
+El desarrollo de sistemas de monitoreo infantil basados en Inteligencia Artificial requiere el apego a normativas internacionales que garanticen la ciberseguridad y la privacidad de los menores. Algunos de los marcos de referencia más relevantes para esta investigación son:
+
+\begin{itemize}
+    \item \textbf{\gls{iso}/\gls{iec} 27001 (Sistemas de Gestión de Seguridad de la Información):} Establece los requisitos para implantar, mantener y mejorar un sistema de gestión de la seguridad de la información. En el contexto de la aplicación, este estándar orienta las buenas prácticas para proteger las capturas de pantalla y registros de texto almacenados localmente en el dispositivo \cite{iso_27001}.
+    \item \textbf{Directrices de la \gls{unicef} para la Protección en Línea de los Niños:} Promueve el desarrollo de tecnologías que empoderen a los padres y protejan a los menores contra la explotación y el abuso sexual en línea, estableciendo que las medidas tecnológicas deben equilibrar la seguridad con el derecho a la privacidad del niño \cite{icmec_unicef_2020}.
+    \item \textbf{Reglamento General de Protección de Datos (\gls{gdpr} - Unión Europea):} Aunque es de jurisdicción europea, se utiliza mundialmente como el estándar de oro en el principio de \textit{Privacy by Design} (Privacidad por Diseño). Este reglamento inspira la arquitectura descentralizada de este proyecto, garantizando que el procesamiento neuronal se realice en el dispositivo (\textit{Edge AI}), minimizando la exposición de datos sensibles en servidores externos \cite{gdpr_eu}.
+\end{itemize}
+
+\section{Normativa Regional (Latinoamérica)}
+En América Latina, las políticas sobre inteligencia artificial y protección infantil en entornos digitales se apoyan en iniciativas de organismos multilaterales orientadas a frenar el cibercrimen:
+
+\begin{itemize}
+    \item \textbf{Comisión Económica para América Latina y el Caribe (\gls{cepal}):} Subraya que la transformación digital y el desarrollo de la \gls{ia} deben abordarse fortaleciendo los marcos institucionales para evitar la vulneración de derechos, fomentando tecnologías inclusivas y seguras para sectores vulnerables como la niñez \cite{cepal_ia_2021}.
+    \item \textbf{Centro Internacional para Niños Desaparecidos y Explotados (\gls{icmec}):} En sus estudios legislativos para la región, enfatiza la necesidad crítica de que los países prevengan activamente el \textit{grooming} y la pornografía infantil a través del uso de herramientas tecnológicas avanzadas \cite{icmec_unicef_2020}.
+\end{itemize} 
+
+\section{Marco Legal Nacional (Honduras)}
+El diseño, desarrollo y operación de la aplicación en el territorio hondureño está sujeto a un marco normativo transversal que abarca desde la Carta Magna hasta leyes de protección al menor y tipificación penal de delitos informáticos.
+
+\begin{itemize}
+    \item \textbf{Constitución de la República de Honduras:} El Artículo 76 garantiza el derecho al honor, a la intimidad personal, familiar y a la propia imagen \cite{constitucion_honduras}. Adicionalmente, el Estado reconoce el recurso de Hábeas Data, asegurando que toda persona tenga derecho a acceder a la información sobre sí misma para su protección \cite{constitucion_honduras}.
+    \item \textbf{Código de la Niñez y la Adolescencia:} Es el pilar de la protección infantil en el país. El Artículo 11 consagra que los niños tienen derecho a la vida, la salud, la dignidad, la libertad personal y a su propia imagen \cite{codigo_ninez}. El objetivo principal de este código es la protección integral de los menores por parte de sus tutores legales y el Estado para asegurar su desarrollo libre de amenazas \cite{codigo_ninez}.
+    \item \textbf{Código Penal de Honduras:} El nuevo cuerpo normativo tipifica delitos de suma relevancia para el contexto de esta tesis, como la ciberviolencia \cite{cdm_ciberviolencia_2022}. El código es vital para la justificación del software, ya que penaliza expresamente el \textit{grooming} (seducción de menores vía \gls{tic}), la extorsión electrónica, y la distribución de material de abuso infantil \cite{cdm_ciberviolencia_2022}. Asimismo, su Artículo 207 sanciona las amenazas vertidas contra una persona o su familia a través de plataformas digitales \cite{cdm_ciberviolencia_2022}.
+    \item \textbf{Regulación de Protección de Datos Personales:} Si bien Honduras se encuentra tramitando un Proyecto de Ley de Protección de Datos que consagra los Derechos \gls{arco} (Acceso, Rectificación, Cancelación y Oposición) y principios estrictos de confidencialidad \cite{central_law_datos}, la protección actual recae en la Ley de Transparencia y Acceso a la Información Pública. Sus Artículos 23 y 24 reconocen el Hábeas Data y garantizan la sistematización protegida de archivos personales, prohibiendo el uso de datos que causen daños morales a las personas \cite{ipandetec_datos_2019}.
+\end{itemize}
+
+\section{Consideraciones Éticas en la Arquitectura Híbrida}
+Todo desarrollo de software orientado a la vigilancia de menores debe regirse por un código de ética tecnológica que evite el espionaje desproporcionado. Bajo los lineamientos de una "\gls{ia} Fiable", la aplicación fue construida respetando los siguientes preceptos:
+
+\begin{itemize}
+    \item \textbf{Privacidad Computacional (Edge AI):} Para dar cumplimiento estricto al Artículo 76 de la Constitución de Honduras \cite{constitucion_honduras}, la evaluación de textos e imágenes ocurre internamente en la memoria \gls{ram} del celular. No se transmiten conversaciones inofensivas ni datos rutinarios a servidores de terceros.
+    \item \textbf{Acción Orientada a la Tutela Legal:} La consolidación de la evidencia en la base de datos (SQLite) y su envío a la nube de los padres ocurre única y exclusivamente cuando la red neuronal detecta un nivel de riesgo confirmable (ej. umbral $>60\%$). Esto equilibra el deber de protección de los padres con el respeto a la intimidad del menor.
+    \item \textbf{Trazabilidad Forense:} En caso de incidentes críticos, las alertas unificadas proveen información exacta (fecha, aplicación de origen y captura de contexto), sirviendo como material preventivo o bitácora de soporte ante posibles vulneraciones tipificadas en el Código Penal hondureño \cite{cdm_ciberviolencia_2022}.
+\end{itemize}

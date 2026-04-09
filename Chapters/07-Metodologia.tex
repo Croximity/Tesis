@@ -1,0 +1,194 @@
+\chapter[Metodología]{Metodología}
+\label{ch:metodologia}
+
+\insertminitoc
+\parindent0pt
+
+\section{Tipo de investigación}
+
+Esta investigación se clasifica como \textbf{aplicada}, ya que su propósito central es desarrollar una solución tecnológica tangible y efectiva para un problema contemporáneo crítico: la exposición de los menores a riesgos digitales (como el ciberacoso, la pornografía y el \textit{grooming}) en dispositivos móviles. Es aplicada porque trasciende la revisión teórica y se orienta directamente al diseño, entrenamiento e implementación de un modelo de software basado en Inteligencia Artificial en el borde (\textit{Edge AI}), cuyo objetivo es analizar e interceptar amenazas en tiempo real dentro de un entorno operativo real (Android).
+
+El enfoque adoptado prioriza la intervención técnica y computacional. La investigación inicia con el establecimiento de parámetros base sobre los riesgos digitales, para luego transitar hacia la fase de modelado algorítmico y evaluación de rendimiento. Utilizando marcos de trabajo de aprendizaje automático (\textit{Machine Learning}), se entrena al sistema para procesar lenguaje natural (\gls{nlp}) y visión artificial de forma local, buscando mitigar el problema sin depender de arquitecturas en la nube.
+
+Además, se emplean técnicas estadísticas y de evaluación de software para analizar la viabilidad del modelo propuesto. La aplicación de estos métodos computacionales tiene una finalidad instrumental: facilitar la creación de una aplicación móvil que no solo detecte amenazas con alta precisión, sino que opere de manera silenciosa y eficiente en el dispositivo del menor. 
+
+En síntesis, la investigación se considera aplicada porque articula los fundamentos de la ciberseguridad, la psicología digital y la ingeniería de software para generar una herramienta tecnológica orientada a la solución de un problema familiar y social concreto, contribuyendo a mejorar la protección infantil y la resiliencia digital.
+
+
+
+\section{Diseño Metodológico}
+
+La presente investigación se desarrolla bajo un estricto \textbf{enfoque cuantitativo}, orientado a medir y evaluar el rendimiento de los algoritmos de detección y la eficiencia de la aplicación móvil mediante datos numéricos y técnicas estadísticas. Este enfoque permite estudiar la viabilidad del sistema desde una perspectiva técnica y objetiva, comparando el rendimiento del modelo contra estándares de la industria y evaluando el consumo de recursos de hardware con precisión algorítmica.
+
+El uso del método cuantitativo resulta imperativo debido a que el éxito de una aplicación de supervisión inteligente en segundo plano se describe a partir de variables observables y cuantificables. Entre estas variables destacan la tasa de precisión y exhaustividad (\textit{Precision and Recall}), el Área Bajo la Curva ($AUC$) para la detección de riesgos, la latencia de inferencia en milisegundos, el consumo de memoria \gls{ram} y el impacto en el drenaje de la batería (\textit{Battery Drain}). El análisis numérico de estos datos es fundamental para garantizar que el sistema protege al menor sin degradar la usabilidad del dispositivo.
+
+Para la validación del modelo, se someterá a la aplicación a pruebas de estrés utilizando conjuntos de datos (\textit{datasets}) estandarizados que contienen ejemplos etiquetados de interacciones seguras y de riesgo. Durante estas simulaciones controladas, se registrarán sistemáticamente los tiempos de procesamiento y las tasas de falsos positivos y falsos negativos. Estas mediciones rigurosas aseguran la coherencia y fiabilidad de los resultados, permitiendo comprobar matemáticamente si la arquitectura local (\textit{Edge-centric}) es viable para un despliegue masivo en dispositivos de gama media.
+
+\section{Involucrados en la investigación}
+
+En el desarrollo y evaluación de un sistema de supervisión infantil inteligente, resulta esencial identificar y categorizar a los \textbf{involucrados} (o \textit{stakeholders}), es decir, los actores humanos y técnicos que interactúan con la plataforma o son afectados por su funcionamiento. Reconocerlos permite dimensionar las restricciones éticas y técnicas del software, facilitando la interpretación de las métricas obtenidas durante las pruebas de usabilidad y rendimiento.
+
+La caracterización de estos actores contribuye a contextualizar los resultados del modelo de Inteligencia Artificial. Los involucrados principales se dividen en tres categorías:
+\begin{itemize}
+    \item \textbf{Los tutores o padres:} Son los administradores del sistema y consumidores finales de la "Bitácora de evidencias". Sus métricas de interés se centran en la reducción de la fatiga de alerta (minimizando los falsos positivos) y la claridad de la interfaz.
+    \item \textbf{Los menores de edad:} Son los usuarios del dispositivo monitorizado. Su involucramiento dicta las restricciones de diseño pasivo de la aplicación, la cual no debe interrumpir su experiencia de usuario (cero latencia percibida) ni vulnerar su privacidad exponiendo datos a terceros.
+    \item \textbf{El ecosistema del dispositivo (\gls{os}):} Representa el entorno técnico (sistema operativo Android, gestores de batería y memoria) que interactúa con la aplicación. Su comportamiento impone las reglas de cuantificación para el consumo de recursos y la persistencia de los servicios en segundo plano.
+\end{itemize}
+
+Identificar estas dinámicas y métricas asociadas a cada actor se convierte en un paso clave para analizar la herramienta de manera integrada, asegurando que la solución técnica sea socialmente aceptada y operativamente viable.
+
+\subsection{Principales involucrados}
+
+El grupo de relevancia está conformado por los \textbf{tutores legales o padres de familia} y los \textbf{menores de edad} que utilizan el dispositivo móvil. Los padres constituyen el eje central de la administración del sistema, ya que su necesidad de proveer un entorno digital seguro justifica la existencia de la aplicación. Su interacción se concentra en la revisión de la bitácora de evidencias, por lo que la precisión del modelo de clasificación visual (reducción de falsos positivos) es un factor determinante para generar confianza y evitar la "fatiga de alerta".\\
+
+Por otro lado, los menores de edad representan a los usuarios pasivos del sistema. Sus hábitos de navegación y uso de aplicaciones dictan los escenarios prácticos a los que se enfrenta el modelo de Inteligencia Artificial. Resulta imperativo que la aplicación funcione de manera imperceptible para ellos; esto implica no afectar el rendimiento del dispositivo (evitando el sobrecalentamiento o la ralentización de la pantalla) y garantizar un manejo de datos riguroso, donde las capturas analizadas se mantengan en el almacenamiento interno de la aplicación, aisladas de la galería pública para proteger su integridad psicológica y digital.\\
+
+\subsection{Otros involucrados}
+
+Aunque no interactúan con la interfaz final de la misma manera que los tutores, existen otros actores técnicos e institucionales fundamentales en el ciclo de vida de la aplicación. En primer lugar, se encuentra el \textbf{desarrollador o investigador}, cuyo rol consistió en la integración, ajuste y calibración del modelo de visión artificial (TensorFlow Lite), así como en la definición de los umbrales de detección y la optimización del servicio de accesibilidad. Sus decisiones metodológicas y de código impactan directamente en la viabilidad y eficiencia del proyecto.\\
+
+Además, el \textbf{ecosistema del dispositivo} (sistema operativo Android, gestores de batería y memoria) actúa como un actor técnico que impone restricciones y condiciones de operación. La aplicación debe adaptarse a las políticas de gestión de recursos del sistema operativo, lo que implica que el modelo de Inteligencia Artificial debe ser lo suficientemente eficiente para operar en segundo plano sin ser eliminado por el gestor de tareas o causar un consumo excesivo de batería. Este entorno técnico condiciona la arquitectura del software y la selección de algoritmos, siendo un factor clave para la validación final del proyecto.\\
+
+\section{Técnicas e Instrumentos de recolección de datos}
+
+La recolección de datos constituye una fase fundamental dentro de la metodología de esta investigación, ya que permite obtener la información base para la evaluación,
+calibración y validación del sistema de supervisión inteligente en dispositivos móviles. Los datos empleados se obtuvieron a partir de \textbf{pruebas empíricas controladas} 
+en entornos de desarrollo y el monitoreo en tiempo real del rendimiento del software, complementados con un banco de imágenes estandarizado para la validación del modelo de Inteligencia Artificial. 
+Este enfoque proporciona métricas precisas sobre la exactitud de la detección y el impacto en los recursos del dispositivo.\\
+
+La técnica principal utilizada fue la \textbf{simulación de escenarios y pruebas de validación algorítmica}, la cual consistió en exponer el servicio de accesibilidad de Android 
+a un conjunto de datos (\textit{dataset}) de imágenes preclasificadas, abarcando tanto contenido seguro (SFW) como inapropiado (\gls{nsfw}). Mediante esta técnica, se registró el comportamiento 
+del modelo de visión artificial bajo diferentes condiciones de pantalla, evaluando la tasa de falsos positivos y falsos negativos. Adicionalmente, se aplicó la técnica de \textbf{perfilamiento de rendimiento (\textit{performance profiling})}, 
+orientada a medir el consumo de recursos de hardware (memoria \gls{ram}, uso de \gls{cpu} y latencia de inferencia) durante la ejecución continua del análisis en segundo plano por intervalos prolongados.\\
+
+
+
+En cuanto a los instrumentos utilizados, se emplearon herramientas de desarrollo y diagnóstico que facilitaron la recopilación exacta de las métricas. Entre ellas destaca el entorno \textbf{Android Studio}, específicamente sus herramientas \textit{Logcat} (para el registro de tiempos de ejecución y captura de excepciones) y \textit{Android Profiler} (para la medición del consumo energético y de memoria del dispositivo virtual y físico).
+
+Asimismo, la propia arquitectura de la aplicación sirvió como instrumento primario de recolección mediante el módulo \textbf{BitacoraDbHelper} (base de datos SQLite local). Este componente registró de forma autónoma cada detección positiva, almacenando variables cruciales como la marca de tiempo, el nivel de confianza (probabilidad porcentual) y la ruta del fotograma analizado. Esta automatización en la captura de datos fue fundamental para vincular la teoría del modelo matemático con la evidencia empírica generada en el dispositivo.
+
+Finalmente, el uso de estas técnicas de prueba de software y perfilamiento de hardware proporcionó una base sólida para el análisis cuantitativo de la herramienta. El objetivo central de esta fase no radicó únicamente en comprobar la eficacia del filtrado de contenido, sino en demostrar la viabilidad técnica de ejecutar modelos de aprendizaje profundo (\textit{Deep Learning}) directamente en el dispositivo (\textit{Edge AI}) de manera eficiente, optimizada y sin vulnerar la privacidad del usuario mediante procesamientos en la nube.
+
+\section{Procedimiento}
+El procedimiento de esta investigación se estructuró mediante una secuencia metodológica compuesta por diversas fases interrelacionadas, diseñadas para garantizar un proceso de desarrollo de 
+software sistemático, replicable y alineado con los objetivos propuestos. Cada fase aborda un componente específico del ciclo de vida del sistema, desde la concepción de la arquitectura móvil 
+hasta la validación final de los modelos de Inteligencia Artificial en el dispositivo. El enfoque empleado es de carácter aplicado, puesto que busca generar una herramienta funcional de control 
+parental multimodal (análisis visual y semántico) mediante Edge AI y procesamiento asíncrono, permitiendo obtener métricas de rendimiento evaluables en entornos de uso real. \\
+
+\textbf{Fase 1: Levantamiento de requerimientos y diseño arquitectónico} \\
+La primera fase consistió en definir las restricciones técnicas y funcionales del sistema de supervisión. Se determinó la necesidad de operar en segundo plano sin interrumpir la experiencia del 
+usuario (menor de edad), lo que justificó la elección de un \textit{AccessibilityService} en Android. Esta \gls{api} nativa fue seleccionada por su doble capacidad: capturar fotogramas de la pantalla 
+de forma invisible y extraer el árbol de nodos de texto (\textit{AccessibilityNodeInfo}) para leer mensajes en aplicaciones de mensajería y redes sociales. Asimismo, se estableció el esquema de almacenamiento local (SQLite) para garantizar que ninguna imagen o conversación sensible saliera del dispositivo hacia servidores externos. \\
+
+\textbf{Fase 2: Preparación del entorno y selección de modelos de Inteligencia Artificial} \\
+Tras la definición arquitectónica, se procedió a la configuración del entorno en Android Studio y la integración de las bibliotecas de aprendizaje automático (TensorFlow Lite). En esta etapa se seleccionaron y adaptaron dos modelos preentrenados distintos:
+\begin{itemize}
+    \item \textbf{Modelo de Visión Artificial:} Orientado a la clasificación de imágenes para detectar contenido \gls{nsfw} (Not Safe For Work). Se configuraron tensores de entrada de 224x224 píxeles en formato RGB.
+    \item \textbf{Modelo de Procesamiento de Lenguaje Natural (\gls{nlp}):} Orientado al análisis semántico de cadenas de texto para la detección de patrones de \textit{grooming}, \textit{sexting} y ciberacoso. Se establecieron las técnicas de tokenización y limpieza de cadenas de caracteres necesarias para el procesamiento en el dispositivo.
+\end{itemize}
+
+\textbf{Fase 3: Desarrollo de los motores de inferencia e integración de servicios} \\
+En esta fase se programó el núcleo analítico de la aplicación, bifurcando el procesamiento en dos analizadores paralelos. Por un lado, el \textit{AnalizadorVisual} encargado de transformar mapas de bits (\textit{Bitmaps}) a búferes de bytes (\textit{ByteBuffers}). Por otro, el \textit{AnalizadorTexto}, encargado de recibir las cadenas de texto capturadas por eventos de accesibilidad, normalizarlas y pasarlas por el modelo de \gls{nlp}. Simultáneamente, se desarrolló el servicio de monitoreo continuo, estableciendo rutinas de evaluación en tiempo real que optimizan el uso de hilos secundarios (\textit{threads}) para evitar la saturación del procesador central. \\
+
+\textbf{Fase 4: Construcción del sistema de persistencia y Bitácora de evidencias} \\
+Para registrar los hallazgos de ambos motores de \gls{ia}, se construyó un módulo de base de datos relacional local utilizando \textit{SQLiteOpenHelper}. Se diseñó la estructura de la "Bitácora de Alertas" para soportar eventos multimodales, definiendo:
+
+\begin{itemize}
+    \item \textbf{Umbrales de detección (\textit{Thresholds}):} Establecimiento de límites de probabilidad independientes para imágenes y texto, detonando el guardado automático del registro cuando se supera el índice de riesgo.
+    \item \textbf{Gestión de evidencias mixtas:} Rutinas para guardar físicamente los fotogramas detectados en el directorio privado (\textit{Context.filesDir}) y para cifrar o almacenar fragmentos de texto (mensajes de chat) que activaron las alertas semánticas.
+    \item \textbf{Interfaz de Usuario (\gls{ui}):} Desarrollo de pantallas mediante \textit{Jetpack Compose} para presentar las evidencias visuales y textuales de forma clara y unificada al tutor legal.
+\end{itemize}
+
+\textbf{Fase 5: Pruebas de ejecución y perfilamiento de rendimiento (Profiling)} \\
+Una vez ensamblado el sistema bimodal, se ejecutaron pruebas de validación utilizando bancos de imágenes y \textit{datasets} de conversaciones sintéticas (textos seguros vs. textos de acoso/grooming) controlados a través de la aplicación. Durante estas ejecuciones, se utilizó la herramienta \textit{Android Profiler} para monitorizar el impacto de correr dos modelos simultáneos. Se midió la huella de memoria \gls{ram}, el porcentaje de uso de la \gls{cpu} durante las inferencias paralelas y el manejo de recolección de basura. Estas variaciones permitieron ajustar el código para evitar fugas de memoria y garantizar la estabilidad del sistema operativo móvil. \\
+
+\textbf{Fase 6: Evaluación y validación de resultados} \\
+Finalmente, se llevó a cabo un proceso de validación evaluando la exactitud conjunta del sistema frente a diferentes escenarios de uso. Se analizaron indicadores clave de rendimiento (KPIs) como la tasa de falsos positivos (alertas innecesarias por jerga juvenil inofensiva o imágenes benignas), falsos negativos (omisiones de acoso sutil) y la latencia del servicio. Esta evaluación buscó determinar la utilidad práctica de la aplicación como una herramienta de control parental holística, confirmando la viabilidad técnica de ejecutar análisis visual y semántico complejos directamente en el dispositivo (\textit{Edge Computing}).
+
+\section{Herramientas tecnológicas utilizadas}
+Para llevar a cabo este estudio y materializar el sistema bimodal de supervisión infantil, fue necesario integrar diversas tecnologías que abarcan desde el desarrollo de aplicaciones móviles nativas hasta el entrenamiento y optimización de modelos de Inteligencia Artificial (\gls{ia}). Las herramientas seleccionadas priorizaron la eficiencia computacional en dispositivos con recursos limitados (\textit{Edge Computing}) y el procesamiento de datos respetando estrictamente la privacidad del usuario. En este apartado, se detallan los recursos tecnológicos empleados, estructurados en dos áreas fundamentales: el entorno de desarrollo móvil y el ecosistema de modelado de Inteligencia Artificial. \\
+
+\textbf{Entorno de desarrollo móvil y persistencia}\\
+La aplicación cliente fue desarrollada íntegramente utilizando \textbf{Android Studio}, el entorno de desarrollo integrado (IDE) oficial para el sistema operativo Android. Este entorno proporcionó las herramientas necesarias para la compilación, depuración y perfilamiento del rendimiento del software mediante \textit{Android Profiler}. Dentro de este ecosistema, se utilizaron las siguientes tecnologías:
+
+\begin{itemize}
+    \item \textbf{Kotlin:} Lenguaje de programación principal, seleccionado por su interoperabilidad, seguridad contra referencias nulas y su capacidad para manejar procesos asíncronos mediante \textit{Coroutines}. Estas características fueron fundamentales para ejecutar la \gls{ia} en hilos secundarios sin bloquear el uso normal del dispositivo.
+    \item \textbf{Jetpack Compose:} Conjunto de herramientas modernas para la construcción de interfaces de usuario (\gls{ui}) de forma declarativa, utilizado para el diseño fluido de la "Bitácora de evidencias".
+    \item \textbf{SQLite:} Motor de base de datos relacional integrado en Android. Se empleó para implementar el módulo de almacenamiento persistente, permitiendo guardar los registros de alertas visuales y semánticas de forma local, asegurando que los datos sensibles nunca sean transmitidos a servidores externos.
+\end{itemize}
+
+\textbf{Ecosistema de Modelado de Inteligencia Artificial}\\
+Para el diseño, entrenamiento, evaluación y exportación de los modelos de aprendizaje automático (tanto el de visión artificial como el de \textit{Procesamiento de Lenguaje Natural}), se utilizó \textbf{Python}. Este lenguaje fue seleccionado por su robustez y su amplia adopción en la comunidad de desarrollo de \gls{ia}. El flujo de trabajo en Python se apoyó en bibliotecas especializadas:
+
+\begin{itemize}
+    \item \textbf{TensorFlow y Keras:} Frameworks principales utilizados para construir y entrenar las redes neuronales. Permitieron desarrollar el modelo de clasificación de imágenes (identificación de \gls{nsfw}) y el modelo semántico para detectar patrones de ciberacoso y \textit{grooming}. Posteriormente, se utilizó \textbf{TensorFlow Lite Converter} para transformar estos modelos a un formato optimizado (\texttt{.tflite}), reduciendo su tamaño y adaptándolos para la inferencia nativa en dispositivos móviles.
+
+    \item \textbf{Herramientas de Procesamiento de Lenguaje Natural (\gls{nlp}):} Se emplearon librerías de procesamiento textual para la tokenización, eliminación de \textit{stopwords} y normalización del texto. Esto permitió convertir los mensajes de chat extraídos en secuencias numéricas comprensibles por el modelo predictivo.
+
+    \item \textbf{Pandas y NumPy:} Librerías fundamentales para la manipulación y transformación de los datos de entrenamiento (\textit{datasets}). \textbf{Pandas} facilitó la limpieza y estructuración de los corpus de texto (mensajes etiquetados como seguros o de riesgo), mientras que \textbf{NumPy} proporcionó arreglos multidimensionales y operaciones matemáticas indispensables para manejar las matrices de píxeles durante el preprocesamiento del banco de imágenes.
+
+    \item \textbf{Matplotlib y Seaborn:} Se emplearon como herramientas de visualización de datos durante el entrenamiento de los modelos. Permitieron generar gráficos de curvas de pérdida (\textit{loss}), precisión (\textit{accuracy}) y matrices de confusión. Su uso fue clave para evaluar el rendimiento de la \gls{ia}, ajustar hiperparámetros y mitigar problemas de sobreajuste (\textit{overfitting}) antes de llevar los modelos al entorno móvil.
+\end{itemize}
+\textbf{Plataformas de desarrollo y análisis}
+Durante las fases de programación de la aplicación móvil, entrenamiento de los modelos y evaluación del rendimiento, se utilizaron tres plataformas principales:
+
+Android Studio: Entorno de desarrollo integrado (IDE) oficial de Google, utilizado como la plataforma principal para escribir, depurar y compilar el código fuente en Kotlin. Su uso fue fundamental para implementar el servicio de accesibilidad, diseñar las interfaces declarativas con Jetpack Compose y ejecutar el Android Profiler para medir el consumo de \gls{cpu}, memoria y batería en tiempo real durante las inferencias locales (Edge AI).\\
+
+Google Colab: Plataforma en la nube basada en cuadernos de Jupyter, empleada específicamente para el procesamiento de datos y el entrenamiento de los modelos de Inteligencia Artificial (Visión Computacional y \gls{nlp}). Al ofrecer acceso gratuito a Unidades de Procesamiento Gráfico (GPU) de alto rendimiento, esta herramienta permitió procesar los amplios conjuntos de datos (datasets) de imágenes y texto, reduciendo drásticamente los tiempos de entrenamiento sin sobrecargar el hardware local, para finalmente exportar los modelos al formato ligero TensorFlow Lite.\\
+
+Microsoft Excel: Herramienta utilizada para la tabulación, organización y depuración de los datos resultantes de las pruebas de precisión. Permitió estructurar las matrices de confusión, calcular los indicadores clave de rendimiento (tasa de aciertos, falsos positivos, falsos negativos) y generar representaciones gráficas comparativas para el análisis cuantitativo del sistema bimodal.\\
+
+\textbf{Hardware y Software}
+El desarrollo central del proyecto, las pruebas de emulación y la integración de los componentes se llevaron a cabo en una computadora portátil MSI Katana 15 B13VGK. Este equipo está dotado de un procesador Intel Core i7 de 13ª generación, 16 GB de memoria \gls{ram}, cuenta con una tarjeta grafica marca Nvidia  Rtx 4070 Laptop GPU   y 1000 GB de almacenamiento interno en estado sólido, operando bajo el sistema Windows 11.\\
+
+Este equipo proporcionó un equilibrio óptimo entre capacidad de procesamiento y eficiencia multitarea. La configuración de 16 GB de memoria \gls{ram} resultó especialmente crucial para soportar las altas exigencias del entorno de Android Studio, permitiendo la ejecución fluida de emuladores de dispositivos móviles (Android Virtual Devices especificamente un Google Pixel 9) de forma simultánea con el perfilador de rendimiento. Al delegar la carga computacional más pesada (el entrenamiento de las redes neuronales) a la nube mediante Google Colab, el hardware local garantizó una compilación rápida del código y un entorno ágil para la depuración de la base de datos SQLite y las rutinas de captura de pantalla en tiempo real.
+
+\section{Métodos de validación}
+La \textbf{validación} constituye una de las etapas más críticas dentro del proceso metodológico, pues garantiza que la arquitectura móvil y los modelos de Inteligencia Artificial cumplan con los objetivos establecidos de manera eficaz, precisa y respetando la privacidad del usuario. En el presente estudio, la validación se llevó a cabo mediante pruebas de rendimiento computacional (\textit{profiling}), evaluación de métricas cuantitativas de clasificación algorítmica y análisis de escenarios de uso simulados que permitieron comprobar la aplicabilidad del sistema bimodal de control parental en dispositivos con sistema operativo Android.
+
+\subsection{Métricas de evaluación del modelo}
+Para asegurar que los hallazgos logrados por los motores de inferencia (Visión Computacional y Procesamiento de Lenguaje Natural) reflejen con precisión la detección de amenazas reales, la validación algorítmica es esencial. Para evaluar la pertinencia, confiabilidad y consistencia del sistema, este estudio utilizó un enfoque cuantitativo basado en métricas estándar de ciencia de datos. Estos procedimientos posibilitaron medir el rendimiento de la Inteligencia Artificial ante datos de entrada no vistos previamente. Los métodos más importantes que se usaron fueron:
+
+\subsubsection{Validación métrica de los modelos de Inteligencia Artificial}
+Esta técnica se basa en medir matemáticamente la capacidad de los modelos para clasificar correctamente imágenes (\gls{nsfw} vs. contenido seguro) y textos (ciberacoso/grooming vs. conversaciones normales) utilizando conjuntos de datos de prueba independientes (\textit{test sets}).
+
+\begin{itemize}
+    \item \textbf{Precisión (\textit{Precision}) y Exhaustividad (\textit{Recall}):} Para medir la proporción de detecciones correctas y la capacidad del modelo para encontrar todas las instancias de riesgo reales, minimizando los falsos positivos que causan fatiga de alerta en los tutores legales.
+    \item \textbf{Puntuación F1 (\textit{F1-Score}):} Para obtener una media armónica que demuestre el equilibrio de los modelos algorítmicos.
+    \item \textbf{Matrices de Confusión:} Para verificar visual y cuantitativamente la distribución de aciertos frente a los falsos positivos y falsos negativos bajo los umbrales de probabilidad definidos en el código fuente.
+\end{itemize}
+
+\subsubsection{Validación del rendimiento del sistema móvil (\textit{Profiling})}
+Se comprobó el comportamiento de la aplicación ejecutándose en segundo plano para asegurar que la integración del servicio de accesibilidad y TensorFlow Lite cumpliera con las restricciones físicas de un entorno móvil:
+\begin{itemize}
+    \item \textbf{Consumo energético y \gls{cpu}:} Evaluación del impacto en la batería y el procesador durante el monitoreo continuo de fotogramas y la extracción de nodos de texto.
+    \item \textbf{Huella de memoria (\gls{ram}):} Verificación de la correcta recolección de basura (\textit{Garbage Collection}) al destruir los mapas de bits procesados, evitando fugas de memoria (\textit{memory leaks}) que pudieran causar cierres forzados.
+    \item \textbf{Latencia de inferencia:} Medición del tiempo (en milisegundos) que toma cada modelo bimodal en emitir un resultado, garantizando que el análisis ocurra en tiempo real (\textit{Edge Computing}) sin ralentizar la interfaz del dispositivo.
+\end{itemize}
+
+\subsubsection{Validación de la persistencia y privacidad de datos}
+Para verificar que el sistema protege la integridad del menor, se validó de forma rigurosa la arquitectura de almacenamiento local. La validación abarcó:
+\begin{itemize}
+    \item Comprobación de que las capturas de pantalla de la Bitácora se almacenen exclusivamente en el directorio privado de la aplicación (\texttt{Context.filesDir}), impidiendo el acceso o filtración desde la galería pública del dispositivo.
+    \item Verificación de la estabilidad de la base de datos (SQLite) al recibir y escribir múltiples alertas simultáneas mediante el uso de hilos secundarios (\textit{threads} asíncronos).
+\end{itemize}
+
+\subsubsection{Validación comparativa con el estado del arte}
+Se contrastaron los resultados de exactitud y latencia obtenidos con estudios recientes sobre ciberseguridad infantil orientada a dispositivos móviles, con el fin de verificar:
+\begin{itemize}
+    \item Si el rendimiento de los modelos locales (\textit{on-device}) es competitivo frente a soluciones comerciales tradicionales basadas en la nube.
+    \item Si los niveles de falsos positivos logrados son aceptables en comparación con la literatura académica actual de moderación automática de contenido.
+    \item Si la arquitectura bimodal propuesta demuestra ventajas operativas al analizar contextos complejos (detección visual y semántica simultánea).
+\end{itemize}
+
+\subsection{Casos de uso}
+Finalmente, se desarrollaron casos de uso concretos con el propósito de validar el sistema bimodal en diferentes condiciones operativas. Estos escenarios permitieron analizar la respuesta de la arquitectura móvil ante variaciones en el contenido visual, la semántica de los mensajes capturados y la carga computacional del dispositivo. Los casos más relevantes fueron los siguientes:
+
+\textbf{Caso 1 - Escenario de uso seguro (Línea base):} \\
+Se simuló la operación normal del dispositivo bajo condiciones de contenido educativo y recreativo calificado como seguro (\textit{SFW}). Este escenario fue utilizado para calibrar los parámetros iniciales de los modelos de visión y \gls{nlp}, estableciendo una línea de referencia para verificar la ausencia de falsos positivos y asegurar que el consumo de recursos (\gls{cpu} y \gls{ram}) se mantuviera en niveles mínimos durante el uso cotidiano.
+
+\textbf{Caso 2 - Detección bimodal de amenazas (\gls{nsfw} y Acoso):} \\
+Se introdujeron estímulos controlados consistentes en imágenes con contenido inapropiado y cadenas de texto con patrones semánticos de \textit{grooming} o ciberacoso. El objetivo fue analizar la capacidad de respuesta de los modelos de inferencia local para detectar simultáneamente ambas amenazas, verificando la correcta detonación del servicio de persistencia y el registro automático de evidencias en la base de datos SQLite.
+
+\textbf{Caso 3 - Pruebas de resiliencia y estrés multitarea:} \\
+Se simuló un entorno de alta demanda mediante la navegación acelerada en múltiples redes sociales, lo que implicó una extracción masiva de nodos de texto (\textit{AccessibilityNodeInfo}) y capturas de pantalla frecuentes. Esta intervención permitió evaluar la estabilidad del servicio de accesibilidad y la capacidad del hardware para gestionar el procesamiento asíncrono bimodal sin generar latencia percibida en la experiencia de usuario del menor.

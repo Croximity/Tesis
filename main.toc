@@ -1,0 +1,119 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {frontmatter}{Índice de figuras}{\es@scroman {xiv}}{listoffigures}%
+\contentsline {frontmatter}{Índice de tablas}{\es@scroman {xvi}}{listoftables}%
+\contentsline {frontmatter}{Glosario de Acrónimos}{\es@scroman {xviii}}{acronym}%
+\contentsline {part}{Parte I: Presentación}{1}{part.1}%
+\contentsline {chapter}{\numberline {1}Presentacion}{2}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Planteamiento del Problema}{3}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Preguntas de Investigación}{3}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Justificación del Estudio}{4}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}Viabilidad del Estudio}{5}{subsection.1.1.3}%
+\contentsline {section}{\numberline {1.2}Objetivos de la Investigación}{6}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Objetivo General}{6}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Objetivos Especificos}{6}{subsection.1.2.2}%
+\contentsline {part}{Parte II: Marco Teórico / Estado del arte}{9}{part.2}%
+\contentsline {chapter}{\numberline {2}Investigaciones previas relacionadas}{10}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Estado actual de la investigación y antecedentes}{11}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Eficacia, usabilidad y vulnerabilidades de las herramientas actuales}{12}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Detección automática de riesgos y el papel de la Inteligencia Artificial}{13}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Dinámicas de mediación parental y co-regulación tecnológica}{14}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Epidemiología y prevalencia de riesgos críticos en el entorno móvil}{16}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Impacto de las arquitecturas persuasivas y algoritmos de recomendación}{17}{section.2.6}%
+\contentsline {chapter}{\numberline {3}Fundamentos de la Psicología infantil en entornos digitales}{18}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Desarrollo cognitivo y emocional en la infancia}{19}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Impacto de la frecuencia de uso en la primera infancia}{20}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Influencia del entorno digital en la conducta infantil}{21}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Vulnerabilidad psicológica, ciberacoso y riesgos de victimización}{22}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Resiliencia digital y el enfoque de Desarrollo Positivo Juvenil (PYD)}{22}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Alineación con los Objetivos de Desarrollo Sostenible (ODS)}{24}{section.3.6}%
+\contentsline {chapter}{\numberline {4}Análisis del comportamiento digital infantil}{25}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Conceptualización y evolución del comportamiento digital infantil}{26}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Patrones de uso y la formación de hábitos digitales}{27}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Indicadores clínicos y conductuales del uso digital problemático}{28}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Métricas de observación y evaluación técnica del comportamiento}{30}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Implicaciones éticas en el perfilado y monitoreo de menores}{31}{section.4.5}%
+\contentsline {chapter}{\numberline {5}Fundamentos de la supervisión y protección infantil digital}{33}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Supervisión parental y dinámicas de mediación en el hogar moderno}{34}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Prevención de riesgos, victimización y salud pública digital}{35}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Arquitecturas de monitoreo y limitaciones de los sistemas comerciales}{36}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Inteligencia Artificial ética y transparencia en el diseño para menores}{37}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Optimización para el procesamiento en el borde (Edge AI) y rendimiento}{38}{section.5.5}%
+\contentsline {chapter}{\numberline {6}Fundamentos de las aplicaciones móviles inteligentes}{39}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Evolución y arquitectura de las aplicaciones móviles}{40}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Gestión de recursos, servicios en segundo plano y rendimiento del \gls {os}}{41}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Inteligencia Artificial y Computación en el Borde (Edge AI)}{42}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Ciberseguridad, privacidad por diseño y vulnerabilidades del ecosistema}{43}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Desafíos de Usabilidad (HCI) y adopción de tecnologías de seguridad}{44}{section.6.5}%
+\contentsline {chapter}{\numberline {7}Integración de inteligencia artificial en la supervisión infantil móvil}{46}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Técnicas de detección de riesgos digitales y análisis multimodal}{47}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Registro, gestión de evidencias y protección de la privacidad}{48}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Optimización de modelos de \gls {ia} para arquitecturas de recursos limitados}{49}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Limitaciones técnicas, sesgos y consideraciones éticas del modelo}{50}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Intervención pedagógica y mediación habilitadora asistida por \gls {ia}}{51}{section.7.5}%
+\contentsline {chapter}{\numberline {8}Marco Conceptual}{53}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Glosario conceptual del estudio}{54}{section.8.1}%
+\contentsline {chapter}{\numberline {9}Marco Legal y Ético}{58}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Normativa Legal y Estándares Técnicos Internacionales}{59}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Normativa Regional (Latinoamérica)}{59}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Marco Legal Nacional (Honduras)}{60}{section.9.3}%
+\contentsline {section}{\numberline {9.4}Consideraciones Éticas en la Arquitectura Híbrida}{60}{section.9.4}%
+\contentsline {part}{Parte III: Marco Metodológico}{63}{part.3}%
+\contentsline {chapter}{\numberline {10}Metodología}{64}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Tipo de investigación}{65}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Diseño Metodológico}{65}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Involucrados en la investigación}{66}{section.10.3}%
+\contentsline {subsection}{\numberline {10.3.1}Principales involucrados}{66}{subsection.10.3.1}%
+\contentsline {subsection}{\numberline {10.3.2}Otros involucrados}{67}{subsection.10.3.2}%
+\contentsline {section}{\numberline {10.4}Técnicas e Instrumentos de recolección de datos}{67}{section.10.4}%
+\contentsline {section}{\numberline {10.5}Procedimiento}{69}{section.10.5}%
+\contentsline {section}{\numberline {10.6}Herramientas tecnológicas utilizadas}{71}{section.10.6}%
+\contentsline {section}{\numberline {10.7}Métodos de validación}{73}{section.10.7}%
+\contentsline {subsection}{\numberline {10.7.1}Métricas de evaluación del modelo}{73}{subsection.10.7.1}%
+\contentsline {subsubsection}{Validación métrica de los modelos de Inteligencia Artificial}{74}{subsubsection*.19}%
+\contentsline {subsubsection}{Validación del rendimiento del sistema móvil (\textit {Profiling})}{74}{subsubsection*.20}%
+\contentsline {subsubsection}{Validación de la persistencia y privacidad de datos}{74}{subsubsection*.21}%
+\contentsline {subsubsection}{Validación comparativa con el estado del arte}{75}{subsubsection*.22}%
+\contentsline {subsection}{\numberline {10.7.2}Casos de uso}{75}{subsection.10.7.2}%
+\contentsline {part}{Parte IV: Implementación de la propuesta tecnológica}{77}{part.4}%
+\contentsline {chapter}{\numberline {11}Implementación}{78}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Diseño de la Solución tecnológica}{80}{section.11.1}%
+\contentsline {subsection}{\numberline {11.1.1}Arquitectura general del sistema}{81}{subsection.11.1.1}%
+\contentsline {section}{\numberline {11.2}Flujo de procesos}{82}{section.11.2}%
+\contentsline {subsection}{\numberline {11.2.1}Flujo de procesos del sistema}{82}{subsection.11.2.1}%
+\contentsline {section}{\numberline {11.3}Implementación del Sistema de Monitoreo y Análisis}{83}{section.11.3}%
+\contentsline {subsection}{\numberline {11.3.1}Preparación y curación del dataset de entrenamiento}{83}{subsection.11.3.1}%
+\contentsline {subsection}{\numberline {11.3.2}Desarrollo del modelo de análisis basado en Deep Learning}{83}{subsection.11.3.2}%
+\contentsline {subsection}{\numberline {11.3.3}Gestión de evidencias y visualización de resultados}{85}{subsection.11.3.3}%
+\contentsline {subsection}{\numberline {11.3.4}Integración con el entorno de ejecución y monitoreo}{85}{subsection.11.3.4}%
+\contentsline {subsection}{\numberline {11.3.5}Entorno de desarrollo y herramientas utilizadas}{86}{subsection.11.3.5}%
+\contentsline {subsection}{\numberline {11.3.6}Validación inicial del sistema}{87}{subsection.11.3.6}%
+\contentsline {section}{\numberline {11.4}Pruebas y resultados preliminares}{87}{section.11.4}%
+\contentsline {subsection}{\numberline {11.4.1}Análisis del lenguaje de riesgo mediante Procesamiento de Lenguaje Natural (\gls {nlp})}{87}{subsection.11.4.1}%
+\contentsline {subsection}{\numberline {11.4.2}Preprocesamiento y Vectorización Avanzada}{87}{subsection.11.4.2}%
+\contentsline {subsection}{\numberline {11.4.3}Arquitectura del Modelo de Red Neuronal (\gls {cnn} + \gls {nlp})}{88}{subsection.11.4.3}%
+\contentsline {subsection}{\numberline {11.4.4}Estrategia de Entrenamiento y Optimización}{89}{subsection.11.4.4}%
+\contentsline {subsection}{\numberline {11.4.5}Procesamiento y Curación del Dataset Visual}{90}{subsection.11.4.5}%
+\contentsline {subsection}{\numberline {11.4.6}Arquitectura de Visión Artificial mediante Transfer Learning}{90}{subsection.11.4.6}%
+\contentsline {subsection}{\numberline {11.4.7}Detección Multimodelo: Contenido Explícito y Violencia/Gore}{90}{subsection.11.4.7}%
+\contentsline {subsection}{\numberline {11.4.8}Optimización de Inferencia y Cuantización (Edge AI)}{90}{subsection.11.4.8}%
+\contentsline {subsection}{\numberline {11.4.9}Pruebas de monitoreo en el entorno Android}{91}{subsection.11.4.9}%
+\contentsline {subsection}{\numberline {11.4.10}Pruebas de estrés y rendimiento del sistema}{92}{subsection.11.4.10}%
+\contentsline {part}{Parte V:Resultados y Análisis }{95}{part.5}%
+\contentsline {chapter}{\numberline {12}Resultados y Análisis}{96}{chapter.12}%
+\contentsline {section}{\numberline {12.1}Presentación de Resultados}{97}{section.12.1}%
+\contentsline {section}{\numberline {12.2}Evaluación de Campo y Aceptación de Usuario}{100}{section.12.2}%
+\contentsline {section}{\numberline {12.3}Precisión del Sistema y Recepción Global}{103}{section.12.3}%
+\contentsline {subsection}{\numberline {12.3.1}Evaluación de Clasificación: Matriz de Confusión}{103}{subsection.12.3.1}%
+\contentsline {part}{Parte VI: Conclusiones y Recomendaciones}{107}{part.6}%
+\contentsline {chapter}{\numberline {13}Conclusiones y recomendaciones}{108}{chapter.13}%
+\contentsline {section}{\numberline {13.1}Conclusiones generales}{109}{section.13.1}%
+\contentsline {section}{\numberline {13.2}Aportes tecnológicos y prácticos de la investigación}{110}{section.13.2}%
+\contentsline {section}{\numberline {13.3}Limitaciones encontradas durante la implementación}{110}{section.13.3}%
+\contentsline {section}{\numberline {13.4}Recomendaciones}{111}{section.13.4}%
+\contentsline {section}{\numberline {13.5}Trabajos Futuros}{112}{section.13.5}%
+\contentsline {part}{Parte VII: Referencias}{115}{part.7}%
+\contentsline {backmatter}{Bibliografía}{117}{chapter*.40}%
+\contentsline {part}{Parte VIII: Anexos}{129}{part.8}%
+\contentsline {chapter}{\numberline {14}Anexos}{130}{chapter.14}%
+\contentsline {chapter}{Anexos}{130}{chapter.14}%
+\contentsline {subsection}{\numberline {14.0.1}Entorno de Hardware y Estación de Trabajo}{134}{subsection.14.0.1}%

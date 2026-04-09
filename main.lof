@@ -1,0 +1,48 @@
+\babel@toc {spanish}{}\relax 
+\addvspace {10\p@ }
+\contentsline {xchapter}{Presentacion}{2}{chapter.1}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Investigaciones previas relacionadas}{10}{chapter.2}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Fundamentos de la Psicología infantil en entornos digitales}{18}{chapter.3}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Análisis del comportamiento digital infantil}{25}{chapter.4}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Fundamentos de la supervisión y protección infantil digital}{33}{chapter.5}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Fundamentos de las aplicaciones móviles inteligentes}{39}{chapter.6}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Integración de inteligencia artificial en la supervisión infantil móvil}{46}{chapter.7}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Marco Conceptual}{53}{chapter.8}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Marco Legal y Ético}{58}{chapter.9}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Metodología}{64}{chapter.10}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Implementación}{79}{chapter.11}%
+\contentsline {figure}{\numberline {11.1}{\ignorespaces Arquitectura del Sistema de Control Parental Basado en Aprendizaje Automático orientado a la Protección Infantil en la Era Digital}}{82}{figure.caption.23}%
+\contentsline {figure}{\numberline {11.2}{\ignorespaces Flujo de procesos del sistema de monitoreo inteligente para protección infantil}}{84}{figure.caption.24}%
+\contentsline {figure}{\numberline {11.3}{\ignorespaces Implementación detallada de la vectorización avanzada y arquitectura Conv1D}}{89}{figure.caption.25}%
+\contentsline {figure}{\numberline {11.4}{\ignorespaces Configuración del algoritmo de Early Stopping para la optimización del entrenamiento}}{89}{figure.caption.26}%
+\contentsline {figure}{\numberline {11.5}{\ignorespaces Fase de ajuste fino y métricas de precisión del modelo de visión}}{91}{figure.caption.27}%
+\contentsline {figure}{\numberline {11.6}{\ignorespaces Interfaz de la bitácora con registro de evidencias}}{92}{figure.caption.28}%
+\contentsline {figure}{\numberline {11.7}{\ignorespaces Monitoreo de recursos en Android Profiler}}{93}{figure.caption.29}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Resultados y Análisis}{96}{chapter.12}%
+\contentsline {figure}{\numberline {12.1}{\ignorespaces Métricas de entrenamiento y validación del modelo de Visión Artificial}}{97}{figure.caption.30}%
+\contentsline {figure}{\numberline {12.2}{\ignorespaces Análisis de Recursos del Sistema: Distribución de Memoria \gls {ram} en Dispositivo Móvil}}{98}{figure.caption.31}%
+\contentsline {figure}{\numberline {12.3}{\ignorespaces Desempeño Operativo: Consumo de \gls {cpu} durante el Monitoreo Inteligente}}{99}{figure.caption.32}%
+\contentsline {figure}{\numberline {12.4}{\ignorespaces Análisis de Riesgos Digitales: Principales preocupaciones de los tutores}}{100}{figure.caption.33}%
+\contentsline {figure}{\numberline {12.5}{\ignorespaces Evaluación de Usabilidad: Calificación de la Eficacia de la Inteligencia Artificial}}{101}{figure.caption.34}%
+\contentsline {figure}{\numberline {12.6}{\ignorespaces Impacto del Diseño Arquitectónico: Confianza en el Procesamiento Local}}{102}{figure.caption.35}%
+\contentsline {figure}{\numberline {12.7}{\ignorespaces Desempeño del Algoritmo: Incidencia de Falsos Positivos}}{103}{figure.caption.36}%
+\contentsline {figure}{\numberline {12.8}{\ignorespaces Desempeño Predictivo: Matriz de Confusión del Sistema Unificado}}{104}{figure.caption.37}%
+\contentsline {figure}{\numberline {12.9}{\ignorespaces Evaluación de la Mecánica de Notificación}}{105}{figure.caption.38}%
+\contentsline {figure}{\numberline {12.10}{\ignorespaces Comparativa de Mercado: \gls {ia} Contextual vs Controles Tradicionales}}{105}{figure.caption.39}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Conclusiones y recomendaciones}{108}{chapter.13}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Anexos}{130}{chapter.14}%
+\contentsline {figure}{\numberline {14.1}{\ignorespaces Interfaz de Android Studio para la integración de modelos TensorFlow Lite en la aplicación móvil}}{130}{figure.caption.41}%
+\contentsline {figure}{\numberline {14.2}{\ignorespaces Documento de Validación Técnica firmado por el especialista}}{132}{figure.caption.42}%
